@@ -368,6 +368,66 @@
             font-family: 'Press Start 2P', monospace !important;
         }
 
+        /* Quick View Overlay Button Styling */
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .btn-overlay {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            border: 3px solid #008800 !important;
+            border-radius: 0 !important;
+            padding: 12px 24px !important;
+            font-family: 'Press Start 2P', monospace !important;
+            font-size: 0.8rem !important;
+            text-shadow: none !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+            transition: all 0.1s ease !important;
+            cursor: pointer !important;
+            position: relative !important;
+            z-index: 20 !important;
+        }
+
+        .btn-overlay:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        .btn-overlay:active {
+            transform: translateY(4px) !important;
+            box-shadow: 
+                0 0 0 #cc0000,
+                0 0 0 #aa0000 !important;
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+        }
+
         /* Responsive Pixel Art */
         @media (max-width: 768px) {
             .btn {
@@ -378,6 +438,11 @@
             .nav-link {
                 padding: 6px 12px !important;
                 font-size: 0.7rem !important;
+            }
+
+            .btn-overlay {
+                padding: 8px 16px !important;
+                font-size: 0.6rem !important;
             }
         }
 
@@ -1844,6 +1909,24 @@
                     // This is a navigation button, show transition
                     showPageTransition();
                 }
+            });
+        });
+
+        // Quick View button functionality
+        const quickViewButtons = document.querySelectorAll('.btn-overlay');
+        quickViewButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Get the product card this button belongs to
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('h3').textContent;
+                const productDescription = productCard.querySelector('.product-description').textContent;
+                const productPrice = productCard.querySelector('.price').textContent;
+                
+                // Create a simple modal or alert for quick view
+                alert(`عرض سريع:\n\nالمنتج: ${productName}\n\nالوصف: ${productDescription}\n\nالسعر: ${productPrice}\n\nانقر على "أضف للسلة" لشراء هذا المنتج.`);
             });
         });
     });
