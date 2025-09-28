@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eldar: Precision Engineering and Aesthetic Excellence - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        /* Pixel Art Base Styles */
+        * {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        body {
+            background: #000000 !important;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%),
+                linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%);
+            font-family: 'Press Start 2P', monospace !important;
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800;
+            line-height: 1.6;
+        }
+
+        /* Pixel Art Navigation */
+        .navbar {
+            background: #000000 !important;
+            border-bottom: 4px solid #00ff00 !important;
+            box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important;
+        }
+
+        .nav-container {
+            background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+        }
+
+        .nav-logo {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-logo i {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-link {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            border: 2px solid transparent !important;
+            padding: 8px 16px !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .nav-link:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #cc0000 !important;
+            box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important;
+        }
+
+        .nav-link.active {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #008800 !important;
+            box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important;
+        }
+
+        /* Pixel Art Blog Post Section */
+        .blog-post-section {
+            background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 4px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 0 0 2px #008800,
+                0 8px 0 #008800,
+                0 16px 0 #006600 !important;
+            position: relative;
+        }
+
+        .blog-post-content {
+            background: #000000 !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .blog-post-title {
+            color: #00ff00 !important;
+            text-shadow: 
+                3px 3px 0px #008800,
+                6px 6px 0px #006600,
+                9px 9px 0px #004400 !important;
+        }
+
+        .blog-post-meta {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body p {
+            text-align: justify !important;
+            text-justify: inter-word !important;
+        }
+
+        .blog-post-body h2, .blog-post-body h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .blog-post-body ul li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body strong {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Buttons */
+        .btn {
+            font-family: 'Press Start 2P', monospace !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            background: #000000 !important;
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            padding: 12px 24px !important;
+            transition: all 0.1s ease !important;
+            position: relative;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        .btn:active {
+            transform: translateY(4px) !important;
+            box-shadow: 
+                0 0 0 #cc0000,
+                0 0 0 #aa0000 !important;
+        }
+
+        .btn-secondary {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #008800 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn-secondary:hover {
+            background: #ff0000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        /* Pixel Art Footer */
+        .footer {
+            background: #000000 !important;
+            border-top: 4px solid #00ff00 !important;
+            box-shadow: 
+                0 -4px 0 #008800,
+                0 -8px 0 #006600 !important;
+        }
+
+        .footer h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .footer p, .footer li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .footer a {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .footer a:hover {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Social Links */
+        .social-links a {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            transition: all 0.1s ease !important;
+            box-shadow: 0 2px 0 #008800 !important;
+        }
+
+        .social-links a:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 0 0 0 #cc0000 !important;
+        }
+
+        /* Pixel Art Form Elements */
+        input, textarea, select {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            padding: 8px 12px !important;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            border-color: #ff0000 !important;
+            box-shadow: 0 0 0 2px #cc0000 !important;
+        }
+
+        /* Pixel Art Scrollbar */
+        ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+            border: 2px solid #00ff00;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border: 2px solid #008800;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0000;
+            border-color: #cc0000;
+        }
+
+        /* Responsive Pixel Art */
+        @media (max-width: 768px) {
+            .btn {
+                padding: 8px 16px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .nav-link {
+                padding: 6px 12px !important;
+                font-size: 0.7rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">The Eldar: Precision Engineering and Aesthetic Excellence</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">✨</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <h2>The Craftworld Awakens: Building Systems of Aesthetic Perfection</h2>
+                    <p>In the grim darkness of the far future, where there is only war, the Eldar stand as the pinnacle of artistic achievement and technological refinement. Unlike the brutish Orks or the mechanical Necrons, the Eldar understand that true power comes not from raw force, but from the perfect harmony of form and function. This guide will teach you the ways of the Eldar: how to build gaming systems that are not only powerful but also beautiful, precise, and worthy of the most refined aesthetic sensibilities.</p>
+                    
+                    <h3>The Eldar Philosophy: "Perfection in All Things"</h3>
+                    <p><strong>The Path of Refinement:</strong></p>
+                    <p>The Eldar understand that true excellence comes from the perfect balance of performance and aesthetics. Every component must be chosen not only for its technical capabilities but also for its beauty and harmony with the whole. Like the finest works of art, a truly great gaming system must inspire awe and admiration while delivering flawless performance.</p>
+                    
+                    <ul>
+                        <li><strong>Aesthetic Excellence:</strong> Every component must be beautiful and well-designed</li>
+                        <li><strong>Precision Engineering:</strong> Perfect fit, finish, and attention to detail</li>
+                        <li><strong>Harmonious Integration:</strong> All components working together in perfect unity</li>
+                        <li><strong>Artistic Vision:</strong> The system as a whole must be a work of art</li>
+                    </ul>
+                    
+                    <h3>The Farseer's Rig: Ultimate Aesthetic Perfection</h3>
+                    <p><strong>Specifications for the Seers of the Craftworld:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i9-14900K or AMD Ryzen 9 7950X (The Seer's Mind)</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4090 (The Wraithcannon)</li>
+                        <li><strong>RAM:</strong> 64GB DDR5-6000 (The Memory of Ages)</li>
+                        <li><strong>Storage:</strong> 4TB NVMe SSD (The Infinity Circuit)</li>
+                        <li><strong>Motherboard:</strong> ASUS ROG Maximus Z790 Hero or MSI MEG X670E Ace</li>
+                        <li><strong>PSU:</strong> 1200W 80+ Titanium (The Spirit Stone)</li>
+                        <li><strong>Case:</strong> Lian Li PC-O11 Dynamic XL (The Craftworld)</li>
+                    </ul>
+                    
+                    <h3>The Warlock's Rig: Elite Performance with Artistic Flair</h3>
+                    <p><strong>Specifications for the Psychic Warriors:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i7-14700K or AMD Ryzen 7 7800X3D</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4080 or AMD RX 7900 XTX</li>
+                        <li><strong>RAM:</strong> 32GB DDR5-6000</li>
+                        <li><strong>Storage:</strong> 2TB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS ROG Strix Z790-E or MSI MPG X670E Carbon</li>
+                        <li><strong>PSU:</strong> 1000W 80+ Platinum</li>
+                        <li><strong>Case:</strong> Fractal Design Torrent or Corsair 5000D Airflow</li>
+                    </ul>
+                    
+                    <h3>The Sacred Components: Blessed by the Craftworld</h3>
+                    <p><strong>The Seer's Mind (CPU):</strong></p>
+                    <p>Like the psychic powers of an Eldar Farseer, your CPU must be capable of processing vast amounts of data with supernatural speed and precision. The Intel Core i9-14900K and AMD Ryzen 9 7950X represent the pinnacle of processing power, capable of handling the most demanding tasks with the grace and efficiency of an Eldar seer.</p>
+                    
+                    <p><strong>The Wraithcannon (GPU):</strong></p>
+                    <p>The graphics card is your primary weapon in the digital war, capable of rendering the most complex scenes with the precision of an Eldar weapon. The NVIDIA RTX 4090 delivers the ultimate in gaming performance, ensuring that your system remains capable of handling future games with the elegance and power of a Wraithcannon.</p>
+                    
+                    <h3>The Eldar Way: Aesthetic Excellence</h3>
+                    <p><strong>Case Selection (The Craftworld's Shell):</strong></p>
+                    <ul>
+                        <li><strong>Lian Li PC-O11 Dynamic:</strong> The ultimate in aesthetic design</li>
+                        <li><strong>Fractal Design Torrent:</strong> Clean lines and elegant curves</li>
+                        <li><strong>Corsair 5000D Airflow:</strong> Modern design with excellent functionality</li>
+                        <li><strong>NZXT H7 Flow:</strong> Minimalist beauty and clean aesthetics</li>
+                    </ul>
+                    
+                    <p><strong>RGB Lighting (The Spirit Stones):</strong></p>
+                    <ul>
+                        <li><strong>Corsair iCUE:</strong> Comprehensive RGB control and synchronization</li>
+                        <li><strong>ASUS Aura Sync:</strong> Seamless integration with ASUS components</li>
+                        <li><strong>MSI Mystic Light:</strong> Advanced lighting effects and customization</li>
+                        <li><strong>Gigabyte RGB Fusion:</strong> Unified lighting control across all components</li>
+                    </ul>
+                    
+                    <h3>The Eldar Way: Precision Engineering</h3>
+                    <p><strong>Cable Management (The Infinity Circuit):</strong></p>
+                    <ul>
+                        <li><strong>Cable Routing:</strong> Perfect organization and routing of all cables</li>
+                        <li><strong>Cable Combs:</strong> Keep cables perfectly aligned and organized</li>
+                        <li><strong>Cable Sleeving:</strong> Custom sleeving for aesthetic appeal</li>
+                        <li><strong>Cable Ties:</strong> Use high-quality ties for professional appearance</li>
+                    </ul>
+                    
+                    <h3>Conclusion: The Path of Aesthetic Perfection</h3>
+                    <p>Remember, faithful servant of the Craftworld, that building a gaming system is not merely a technical task, but an artistic endeavor. Each component must be chosen with care and installed with precision, for the beauty of the whole depends on the perfection of each part. By following these ancient rites and building your system with the wisdom of the Eldar, you ensure that your gaming rig will not only perform flawlessly but also inspire awe and admiration in all who behold it.</p>
+                    
+                    <p>May the Craftworld bless your hardware, and may your system be a testament to the eternal pursuit of perfection. For the Craftworld! For the Eldar! May your system shine with the light of a thousand spirit stones!</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPU Overclocking Fundamentals: A Complete Beginner's Guide - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">GPU Overclocking Fundamentals: A Complete Beginner's Guide</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji"></div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <h2>What is GPU Overclocking?</h2>
+                    <p>GPU overclocking is the process of increasing your graphics card's clock speeds beyond the manufacturer's default specifications to achieve better performance. This technique allows you to squeeze extra frames per second (FPS) from your graphics card without spending money on a more expensive model. However, it's crucial to understand the fundamentals before diving into overclocking to avoid damaging your hardware.</p>
+
+                    <h2>Understanding GPU Components</h2>
+                    <p>Before overclocking, you need to understand the key components of a graphics card:</p>
+                    <ul>
+                        <li><strong>GPU Core Clock:</strong> The speed at which the graphics processing unit operates, measured in MHz</li>
+                        <li><strong>Memory Clock:</strong> The speed of the VRAM (Video Random Access Memory), also measured in MHz</li>
+                        <li><strong>Power Limit:</strong> The maximum amount of power the GPU can draw</li>
+                        <li><strong>Temperature Limit:</strong> The maximum safe operating temperature</li>
+                        <li><strong>Voltage:</strong> The electrical power supplied to the GPU core</li>
+                    </ul>
+
+                    <h2>Essential Tools for GPU Overclocking</h2>
+                    <p>To safely overclock your GPU, you'll need several monitoring and tweaking tools:</p>
+                    <ul>
+                        <li><strong>MSI Afterburner:</strong> The most popular GPU overclocking software with excellent monitoring capabilities</li>
+                        <li><strong>GPU-Z:</strong> Detailed hardware information and real-time monitoring</li>
+                        <li><strong>HWiNFO64:</strong> Comprehensive system monitoring</li>
+                        <li><strong>3DMark or Unigine Heaven:</strong> Benchmarking tools to test stability</li>
+                        <li><strong>FurMark:</strong> Stress testing tool to verify stability under load</li>
+                    </ul>
+
+                    <h2>Safety First: Understanding the Risks</h2>
+                    <p>Overclocking can potentially damage your hardware if done incorrectly. Here are the main risks:</p>
+                    <ul>
+                        <li><strong>Heat Generation:</strong> Higher clock speeds produce more heat, which can damage components</li>
+                        <li><strong>Power Consumption:</strong> Increased power draw can stress your PSU and motherboard</li>
+                        <li><strong>Warranty Voiding:</strong> Most manufacturers void warranties for overclocked hardware</li>
+                        <li><strong>System Instability:</strong> Aggressive overclocking can cause crashes and data corruption</li>
+                    </ul>
+
+                    <h2>Basic Overclocking Process</h2>
+                    <p>Here's a step-by-step approach to safely overclock your GPU:</p>
+                    <ol>
+                        <li><strong>Baseline Testing:</strong> Run benchmarks at stock settings to establish performance baselines</li>
+                        <li><strong>Temperature Monitoring:</strong> Ensure your GPU stays under 83°C under load</li>
+                        <li><strong>Gradual Increases:</strong> Increase core clock by 25-50MHz increments</li>
+                        <li><strong>Stability Testing:</strong> Run stress tests after each adjustment</li>
+                        <li><strong>Memory Overclocking:</strong> Once core is stable, increase memory clock by 50-100MHz</li>
+                        <li><strong>Power Limit Adjustment:</strong> Increase power limit to 110-120% if needed</li>
+                    </ol>
+
+                    <h2>Monitoring and Validation</h2>
+                    <p>Continuous monitoring is essential during overclocking:</p>
+                    <ul>
+                        <li>Watch GPU temperature (keep under 83°C)</li>
+                        <li>Monitor power consumption</li>
+                        <li>Check for artifacts or visual glitches</li>
+                        <li>Run extended stress tests (30+ minutes)</li>
+                        <li>Test in real games, not just benchmarks</li>
+                    </ul>
+
+                    <h2>Common Mistakes to Avoid</h2>
+                    <p>Beginners often make these mistakes:</p>
+                    <ul>
+                        <li>Increasing voltage too aggressively</li>
+                        <li>Ignoring temperature limits</li>
+                        <li>Skipping stability testing</li>
+                        <li>Overclocking on insufficient cooling</li>
+                        <li>Not saving stable profiles</li>
+                    </ul>
+
+                    <h2>Expected Performance Gains</h2>
+                    <p>Realistic overclocking results vary by GPU model:</p>
+                    <ul>
+                        <li><strong>Entry-level GPUs:</strong> 5-15% performance improvement</li>
+                        <li><strong>Mid-range GPUs:</strong> 10-20% performance improvement</li>
+                        <li><strong>High-end GPUs:</strong> 5-15% performance improvement (already optimized)</li>
+                    </ul>
+
+                    <p>Remember, overclocking is about finding the sweet spot between performance and stability. Start conservatively, test thoroughly, and always prioritize the longevity of your hardware over maximum performance gains.</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

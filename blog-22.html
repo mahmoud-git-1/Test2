@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lords of Cinder: High-End Gaming Rigs - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">The Lords of Cinder: High-End Gaming Rigs</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">👑</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <h2>The Age of Fire: Building Systems of Legendary Power</h2>
+                    <p>In the age of fire, when the world was young and the first flame burned bright, the Lords of Cinder ruled with absolute power and authority. Like these legendary beings who possessed the strength to link the fire and maintain the age of light, building a high-end gaming rig requires the wisdom of the ages and the power of the most legendary components. This guide will teach you the ways of the Lords of Cinder: how to build gaming systems that embody the absolute power and majesty of the age of fire, creating rigs worthy of the most legendary warriors.</p>
+                    
+                    <h3>The Lords of Cinder Philosophy: "Power Through Excellence"</h3>
+                    <p><strong>The Path of Absolute Power:</strong></p>
+                    <p>The Lords of Cinder understand that true power comes not from compromise, but from the absolute pursuit of excellence. Every component must be the finest available, every choice must be made with the wisdom of the ages, and every system must be built to stand the test of time. This philosophy applies perfectly to building high-end gaming systems, where the pursuit of absolute performance requires the finest components and the most careful planning.</p>
+                    
+                    <ul>
+                        <li><strong>Absolute Performance:</strong> No compromise in the pursuit of excellence</li>
+                        <li><strong>Legendary Components:</strong> Only the finest hardware will suffice</li>
+                        <li><strong>Timeless Design:</strong> Systems built to remain powerful for years</li>
+                        <li><strong>Majestic Aesthetics:</strong> Beauty and power in perfect harmony</li>
+                    </ul>
+                    
+                    <h3>Gwyn's Rig: The Ultimate Lord of Cinder Build</h3>
+                    <p><strong>Specifications for the Lord of Sunlight:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i9-14900K or AMD Ryzen 9 7950X (The Soul of Gwyn)</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4090 (The Power of the Sun)</li>
+                        <li><strong>RAM:</strong> 64GB DDR5-6000 (The Memory of the Lords)</li>
+                        <li><strong>Storage:</strong> 4TB NVMe SSD (The Vault of Ages)</li>
+                        <li><strong>Motherboard:</strong> ASUS ROG Maximus Z790 Extreme or MSI MEG X670E Godlike</li>
+                        <li><strong>PSU:</strong> 1200W 80+ Titanium (The Power of the First Flame)</li>
+                        <li><strong>Case:</strong> Lian Li PC-O11 Dynamic XL (The Throne of Power)</li>
+                    </ul>
+                    
+                    <h3>The Witch of Izalith's Rig: Elite Performance with Fire</h3>
+                    <p><strong>Specifications for the Mother of Pyromancy:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i7-14700K or AMD Ryzen 7 7800X3D</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4080 or AMD RX 7900 XTX</li>
+                        <li><strong>RAM:</strong> 32GB DDR5-6000</li>
+                        <li><strong>Storage:</strong> 2TB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS ROG Strix Z790-E or MSI MPG X670E Carbon</li>
+                        <li><strong>PSU:</strong> 1000W 80+ Platinum</li>
+                        <li><strong>Case:</strong> Fractal Design Torrent or Corsair 5000D Airflow</li>
+                    </ul>
+                    
+                    <h3>Nito's Rig: Balanced Power with Undead Might</h3>
+                    <p><strong>Specifications for the First of the Dead:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i5-14600K or AMD Ryzen 5 7600X</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4070 or AMD RX 7800 XT</li>
+                        <li><strong>RAM:</strong> 32GB DDR5-5600</li>
+                        <li><strong>Storage:</strong> 1TB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS TUF Gaming Z790-Plus or MSI B650 Tomahawk</li>
+                        <li><strong>PSU:</strong> 850W 80+ Gold</li>
+                        <li><strong>Case:</strong> Fractal Design Meshify C or NZXT H7 Flow</li>
+                    </ul>
+                    
+                    <h3>The Sacred Components: Blessed by the Lords of Cinder</h3>
+                    <p><strong>The Soul of Gwyn (CPU):</strong></p>
+                    <p>Like the soul of Gwyn that granted him the power to rule the age of fire, your CPU must be capable of processing vast amounts of data with the efficiency and power of a Lord of Cinder. The Intel Core i9-14900K and AMD Ryzen 9 7950X represent the pinnacle of processing power, capable of handling the most demanding tasks with the authority that only a Lord of Cinder can command.</p>
+                    
+                    <p><strong>The Power of the Sun (GPU):</strong></p>
+                    <p>The graphics card is your primary weapon in the digital realm, capable of rendering the most beautiful worlds and epic battles with the power of the sun itself. The NVIDIA RTX 4090 delivers the ultimate in gaming performance, ensuring that your system remains capable of handling future games with the majesty that only a Lord of Cinder can achieve.</p>
+                    
+                    <p><strong>The Memory of the Lords (RAM):</strong></p>
+                    <p>Memory is the collective knowledge of the Lords of Cinder, storing all the data and textures needed for rendering. DDR5-6000 provides the speed and bandwidth necessary for modern gaming, while 32GB ensures you can handle multiple applications without running out of space.</p>
+                    
+                    <h3>The Way of the Lords of Cinder: Building Your Legendary Rig</h3>
+                    <p><strong>Preparing for Greatness (Gathering the Finest Equipment):</strong></p>
+                    <ul>
+                        <li><strong>Anti-Static Wrist Strap:</strong> Protect your legendary components from static discharge</li>
+                        <li><strong>Premium Screwdriver Set:</strong> For securing components with precision</li>
+                        <li><strong>High-Quality Thermal Paste:</strong> For optimal CPU cooling</li>
+                        <li><strong>Cable Management Kit:</strong> For organizing cables with royal elegance</li>
+                        <li><strong>Patience and Determination:</strong> The most important tools of all</li>
+                    </ul>
+                    
+                    <p><strong>The Sacred Rites of Assembly (Building Your Legendary System):</strong></p>
+                    <ul>
+                        <li><strong>First Rite:</strong> Install CPU and RAM on the motherboard with royal precision</li>
+                        <li><strong>Second Rite:</strong> Mount the motherboard in the case with majestic care</li>
+                        <li><strong>Third Rite:</strong> Install the power supply with the power of the first flame</li>
+                        <li><strong>Fourth Rite:</strong> Install storage drives with the wisdom of the ages</li>
+                        <li><strong>Fifth Rite:</strong> Install the graphics card with the authority of a Lord</li>
+                        <li><strong>Final Rite:</strong> Connect all cables and perform the first boot with the power of the sun</li>
+                    </ul>
+                    
+                    <h3>The Bonfire's Light: Troubleshooting and Maintenance</h3>
+                    <p><strong>Common Trials (The Challenges You May Face):</strong></p>
+                    <ul>
+                        <li><strong>System Won't Boot:</strong> Check all connections and power supply</li>
+                        <li><strong>No Display:</strong> Verify graphics card installation and monitor connection</li>
+                        <li><strong>Overheating:</strong> Check CPU cooler installation and thermal paste</li>
+                        <li><strong>Random Crashes:</strong> Test RAM with MemTest86</li>
+                    </ul>
+                    
+                    <p><strong>The Path of Maintenance (Keeping Your System Healthy):</strong></p>
+                    <ul>
+                        <li><strong>Regular Cleaning:</strong> Keep your system free of dust and debris</li>
+                        <li><strong>Driver Updates:</strong> Keep all drivers updated for optimal performance</li>
+                        <li><strong>System Monitoring:</strong> Monitor temperatures and performance</li>
+                        <li><strong>Backup Important Data:</strong> Protect your save files and important documents</li>
+                    </ul>
+                    
+                    <h3>The Way of the Sun: Gaming and Performance</h3>
+                    <p><strong>Gaming Performance (The Power of the First Flame):</strong></p>
+                    <ul>
+                        <li><strong>4K Gaming:</strong> Excellent performance at 4K resolution</li>
+                        <li><strong>144+ FPS:</strong> Smooth gameplay in most modern games</li>
+                        <li><strong>Ray Tracing:</strong> Full ray tracing support with RTX cards</li>
+                        <li><strong>Future-Proofing:</strong> Built to handle games for years to come</li>
+                    </ul>
+                    
+                    <p><strong>Optimization (The Art of the Lords of Cinder):</strong></p>
+                    <ul>
+                        <li><strong>Game Settings:</strong> Adjust graphics settings for optimal performance</li>
+                        <li><strong>System Optimization:</strong> Use tools like MSI Afterburner for GPU tuning</li>
+                        <li><strong>Background Processes:</strong> Close unnecessary programs while gaming</li>
+                        <li><strong>Regular Maintenance:</strong> Keep your system clean and updated</li>
+                    </ul>
+                    
+                    <h3>The Community of the Sun: Finding Help and Support</h3>
+                    <p><strong>The Warriors of Sunlight (Online Communities):</strong></p>
+                    <ul>
+                        <li><strong>Reddit:</strong> r/buildapc and r/pcmasterrace for advice and support</li>
+                        <li><strong>Discord Servers:</strong> Join PC building communities for real-time help</li>
+                        <li><strong>YouTube Channels:</strong> Watch tutorials and build guides</li>
+                        <li><strong>Forums:</strong> Participate in discussions and ask questions</li>
+                    </ul>
+                    
+                    <h3>Conclusion: The Age of Fire Begins</h3>
+                    <p>Remember, Lord of Cinder, that building a high-end gaming PC is not merely a technical task, but a journey of absolute excellence and legendary power. Like the Lords of Cinder who must learn to harness the power of the first flame, you will face challenges and setbacks, but with determination and the guidance of the community, you will emerge victorious and achieve the legendary status you seek.</p>
+                    
+                    <p>May the first flame guide your path, and may your system serve you well in the eternal quest for gaming excellence. Praise the sun, and may your frame rates be high and your temperatures low. The age of fire begins now, Lord of Cinder. Prepare yourself for the trials ahead, for the power of the sun awaits!</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intel vs AMD: The Ultimate CPU Battle - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        /* Pixel Art Base Styles */
+        * {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        body {
+            background: #000000 !important;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%),
+                linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%);
+            font-family: 'Press Start 2P', monospace !important;
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800;
+            line-height: 1.6;
+        }
+
+        /* Pixel Art Navigation */
+        .navbar {
+            background: #000000 !important;
+            border-bottom: 4px solid #00ff00 !important;
+            box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important;
+        }
+
+        .nav-container {
+            background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+        }
+
+        .nav-logo {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-logo i {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-link {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            border: 2px solid transparent !important;
+            padding: 8px 16px !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .nav-link:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #cc0000 !important;
+            box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important;
+        }
+
+        .nav-link.active {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #008800 !important;
+            box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important;
+        }
+
+        /* Pixel Art Blog Post Section */
+        .blog-post-section {
+            background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 4px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 0 0 2px #008800,
+                0 8px 0 #008800,
+                0 16px 0 #006600 !important;
+            position: relative;
+        }
+
+        .blog-post-content {
+            background: #000000 !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .blog-post-title {
+            color: #00ff00 !important;
+            text-shadow: 
+                3px 3px 0px #008800,
+                6px 6px 0px #006600,
+                9px 9px 0px #004400 !important;
+        }
+
+        .blog-post-meta {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body p {
+            text-align: justify !important;
+            text-justify: inter-word !important;
+        }
+
+        .blog-post-body h2, .blog-post-body h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .blog-post-body ul li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body strong {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Buttons */
+        .btn {
+            font-family: 'Press Start 2P', monospace !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            background: #000000 !important;
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            padding: 12px 24px !important;
+            transition: all 0.1s ease !important;
+            position: relative;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        .btn:active {
+            transform: translateY(4px) !important;
+            box-shadow: 
+                0 0 0 #cc0000,
+                0 0 0 #aa0000 !important;
+        }
+
+        .btn-secondary {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #008800 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn-secondary:hover {
+            background: #ff0000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        /* Pixel Art Footer */
+        .footer {
+            background: #000000 !important;
+            border-top: 4px solid #00ff00 !important;
+            box-shadow: 
+                0 -4px 0 #008800,
+                0 -8px 0 #006600 !important;
+        }
+
+        .footer h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .footer p, .footer li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .footer a {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .footer a:hover {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Social Links */
+        .social-links a {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            transition: all 0.1s ease !important;
+            box-shadow: 0 2px 0 #008800 !important;
+        }
+
+        .social-links a:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 0 0 0 #cc0000 !important;
+        }
+
+        /* Pixel Art Form Elements */
+        input, textarea, select {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            padding: 8px 12px !important;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            border-color: #ff0000 !important;
+            box-shadow: 0 0 0 2px #cc0000 !important;
+        }
+
+        /* Pixel Art Scrollbar */
+        ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+            border: 2px solid #00ff00;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border: 2px solid #008800;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0000;
+            border-color: #cc0000;
+        }
+
+        /* Responsive Pixel Art */
+        @media (max-width: 768px) {
+            .btn {
+                padding: 8px 16px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .nav-link {
+                padding: 6px 12px !important;
+                font-size: 0.7rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">Intel vs AMD: The Ultimate CPU Battle</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">⚡</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <h2>The Eternal Rivalry: Intel vs AMD</h2>
+                    <p>The competition between Intel and AMD has shaped the CPU landscape for over five decades, driving innovation and providing consumers with better performance at competitive prices. This comprehensive comparison examines the current state of both manufacturers' offerings, their strengths, weaknesses, and which might be the better choice for different use cases.</p>
+                    
+                    <h3>Intel's Current Lineup: 13th and 14th Generation</h3>
+                    <p><strong>Intel Core i9-13900K (Raptor Lake-S):</strong></p>
+                    <ul>
+                        <li><strong>Architecture:</strong> Raptor Lake-S (10nm Enhanced SuperFin)</li>
+                        <li><strong>Cores/Threads:</strong> 24 cores (8P + 16E) / 32 threads</li>
+                        <li><strong>Base Clock:</strong> 3.0 GHz (P-cores), 2.2 GHz (E-cores)</li>
+                        <li><strong>Boost Clock:</strong> 5.8 GHz (P-cores), 4.3 GHz (E-cores)</li>
+                        <li><strong>Cache:</strong> 36MB L3, 32MB L2</li>
+                        <li><strong>TDP:</strong> 125W (Base), 253W (Turbo)</li>
+                        <li><strong>Memory Support:</strong> DDR4-3200, DDR5-5600</li>
+                        <li><strong>PCIe Lanes:</strong> 20 PCIe 5.0 lanes</li>
+                    </ul>
+                    
+                    <p><strong>Intel Core i7-13700K:</strong></p>
+                    <ul>
+                        <li><strong>Architecture:</strong> Raptor Lake-S</li>
+                        <li><strong>Cores/Threads:</strong> 16 cores (8P + 8E) / 24 threads</li>
+                        <li><strong>Base Clock:</strong> 3.4 GHz (P-cores), 2.5 GHz (E-cores)</li>
+                        <li><strong>Boost Clock:</strong> 5.4 GHz (P-cores), 4.2 GHz (E-cores)</li>
+                        <li><strong>Cache:</strong> 30MB L3, 24MB L2</li>
+                        <li><strong>TDP:</strong> 125W (Base), 253W (Turbo)</li>
+                    </ul>
+                    
+                    <h3>AMD's Current Lineup: Ryzen 7000 Series</h3>
+                    <p><strong>AMD Ryzen 9 7950X (Zen 4):</strong></p>
+                    <ul>
+                        <li><strong>Architecture:</strong> Zen 4 (5nm process)</li>
+                        <li><strong>Cores/Threads:</strong> 16 cores / 32 threads</li>
+                        <li><strong>Base Clock:</strong> 4.5 GHz</li>
+                        <li><strong>Boost Clock:</strong> 5.7 GHz</li>
+                        <li><strong>Cache:</strong> 64MB L3, 16MB L2</li>
+                        <li><strong>TDP:</strong> 170W</li>
+                        <li><strong>Memory Support:</strong> DDR5-5200 (JEDEC), DDR5-6000+ (OC)</li>
+                        <li><strong>PCIe Lanes:</strong> 24 PCIe 5.0 lanes</li>
+                    </ul>
+                    
+                    <p><strong>AMD Ryzen 7 7700X:</strong></p>
+                    <ul>
+                        <li><strong>Architecture:</strong> Zen 4</li>
+                        <li><strong>Cores/Threads:</strong> 8 cores / 16 threads</li>
+                        <li><strong>Base Clock:</strong> 4.5 GHz</li>
+                        <li><strong>Boost Clock:</strong> 5.4 GHz</li>
+                        <li><strong>Cache:</strong> 32MB L3, 8MB L2</li>
+                        <li><strong>TDP:</strong> 105W</li>
+                    </ul>
+                    
+                    <h3>Performance Analysis: Gaming</h3>
+                    <p>In gaming scenarios, Intel's hybrid architecture with high-frequency P-cores provides excellent single-threaded performance, which is crucial for most games. The i9-13900K often leads in gaming benchmarks, particularly at 1080p and 1440p resolutions.</p>
+                    
+                    <p><strong>Gaming Benchmarks (1080p, High Settings):</strong></p>
+                    <ul>
+                        <li><strong>Cyberpunk 2077:</strong> Intel i9-13900K: 142 FPS, AMD 7950X: 138 FPS</li>
+                        <li><strong>Assassin's Creed Valhalla:</strong> Intel i9-13900K: 156 FPS, AMD 7950X: 152 FPS</li>
+                        <li><strong>Call of Duty: Modern Warfare II:</strong> Intel i9-13900K: 198 FPS, AMD 7950X: 195 FPS</li>
+                        <li><strong>Microsoft Flight Simulator:</strong> Intel i9-13900K: 89 FPS, AMD 7950X: 87 FPS</li>
+                    </ul>
+                    
+                    <h3>Performance Analysis: Productivity</h3>
+                    <p>For content creation, video editing, and multi-threaded workloads, AMD's Ryzen processors often provide better performance per dollar. The 7950X's 16 full cores excel in applications that can utilize all available threads.</p>
+                    
+                    <p><strong>Productivity Benchmarks:</strong></p>
+                    <ul>
+                        <li><strong>Cinebench R23 (Multi-core):</strong> AMD 7950X: 38,847 pts, Intel i9-13900K: 36,054 pts</li>
+                        <li><strong>Blender (BMW Scene):</strong> AMD 7950X: 2:34, Intel i9-13900K: 2:41</li>
+                        <li><strong>HandBrake (4K to 1080p):</strong> AMD 7950X: 8:23, Intel i9-13900K: 8:45</li>
+                        <li><strong>Adobe Premiere Pro:</strong> AMD 7950X: 1,247 pts, Intel i9-13900K: 1,198 pts</li>
+                    </ul>
+                    
+                    <h3>Power Efficiency and Thermal Performance</h3>
+                    <p>AMD's Zen 4 architecture, built on TSMC's 5nm process, generally offers better power efficiency than Intel's 10nm Enhanced SuperFin process. However, Intel's hybrid architecture provides excellent power management for mixed workloads.</p>
+                    
+                    <p><strong>Power Consumption Comparison:</strong></p>
+                    <ul>
+                        <li><strong>Idle Power:</strong> AMD 7950X: 45W, Intel i9-13900K: 52W</li>
+                        <li><strong>Gaming Power:</strong> AMD 7950X: 120W, Intel i9-13900K: 140W</li>
+                        <li><strong>Full Load Power:</strong> AMD 7950X: 230W, Intel i9-13900K: 253W</li>
+                    </ul>
+                    
+                    <h3>Platform Features and Future-Proofing</h3>
+                    <p><strong>Intel LGA 1700 Platform:</strong></p>
+                    <ul>
+                        <li>Supports 12th, 13th, and 14th generation processors</li>
+                        <li>Z790, B760, H770 chipsets</li>
+                        <li>DDR4 and DDR5 memory support</li>
+                        <li>PCIe 5.0 support</li>
+                        <li>Integrated graphics on most models</li>
+                    </ul>
+                    
+                    <p><strong>AMD AM5 Platform:</strong></p>
+                    <ul>
+                        <li>Supports Ryzen 7000 series and future generations</li>
+                        <li>X670E, X670, B650E, B650 chipsets</li>
+                        <li>DDR5 memory only</li>
+                        <li>PCIe 5.0 support</li>
+                        <li>Integrated graphics on most models</li>
+                    </ul>
+                    
+                    <h3>Overclocking Capabilities</h3>
+                    <p><strong>Intel Overclocking:</strong> Intel's unlocked K-series processors offer excellent overclocking potential. The hybrid architecture allows for independent overclocking of P-cores and E-cores, providing flexibility in tuning for specific workloads.</p>
+                    
+                    <p><strong>AMD Overclocking:</strong> AMD's Precision Boost Overdrive (PBO) and Curve Optimizer provide sophisticated overclocking tools. The chiplet design and excellent thermal characteristics make Ryzen processors excellent overclockers.</p>
+                    
+                    <h3>Price-to-Performance Analysis</h3>
+                    <p><strong>Budget Segment ($100-200):</strong></p>
+                    <ul>
+                        <li>AMD Ryzen 5 7600X: Excellent gaming performance, good productivity</li>
+                        <li>Intel Core i5-13400F: Solid all-around performance, great value</li>
+                    </ul>
+                    
+                    <p><strong>Mid-Range ($200-400):</strong></p>
+                    <ul>
+                        <li>AMD Ryzen 7 7700X: Best productivity performance in this range</li>
+                        <li>Intel Core i7-13700K: Excellent gaming performance, good productivity</li>
+                    </ul>
+                    
+                    <p><strong>High-End ($400+):</strong></p>
+                    <ul>
+                        <li>AMD Ryzen 9 7950X: Best for content creation and productivity</li>
+                        <li>Intel Core i9-13900K: Best for gaming and mixed workloads</li>
+                    </ul>
+                    
+                    <h3>Integrated Graphics Comparison</h3>
+                    <p><strong>Intel UHD Graphics 770:</strong> Integrated graphics suitable for basic tasks and light gaming. Supports hardware-accelerated video encoding and decoding.</p>
+                    
+                    <p><strong>AMD RDNA 2 Graphics:</strong> More powerful integrated graphics with better gaming performance. Supports modern APIs and features like FSR (FidelityFX Super Resolution).</p>
+                    
+                    <h3>Future Roadmap and Predictions</h3>
+                    <p><strong>Intel's Upcoming Releases:</strong> Intel is preparing to launch their 14th generation processors (Raptor Lake Refresh) and Arrow Lake (15th generation) on the new LGA 1851 socket. These processors will feature improved performance and efficiency.</p>
+                    
+                    <p><strong>AMD's Future Plans:</strong> AMD is developing Zen 5 architecture for future Ryzen processors, expected to deliver significant performance improvements. The company is also working on 3D V-Cache technology for enhanced gaming performance.</p>
+                    
+                    <h3>Conclusion: Choosing the Right CPU</h3>
+                    <p><strong>Choose Intel if:</strong></p>
+                    <ul>
+                        <li>Gaming is your primary use case</li>
+                        <li>You need the highest single-threaded performance</li>
+                        <li>You want DDR4 memory support for cost savings</li>
+                        <li>You prefer established platform stability</li>
+                        <li>You need integrated graphics for basic tasks</li>
+                    </ul>
+                    
+                    <p><strong>Choose AMD if:</strong></p>
+                    <ul>
+                        <li>Content creation and productivity are priorities</li>
+                        <li>You want better power efficiency</li>
+                        <li>You need more cores and threads for your budget</li>
+                        <li>You want future-proofing with AM5 platform</li>
+                        <li>You prefer better multi-threaded performance</li>
+                    </ul>
+                    
+                    <p>Both manufacturers offer excellent products, and the competition between them continues to drive innovation and provide consumers with better performance at competitive prices. The key is to match the processor to your specific use case and budget, considering factors like gaming performance, productivity needs, power efficiency, and platform features.</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

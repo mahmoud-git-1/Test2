@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Primarchs: The Emperor's Twenty Sons - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">👥 The Primarchs: The Emperor's Twenty Sons</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">👥</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <p>The Primarchs stand as the greatest creations of the Emperor of Mankind, twenty superhuman beings crafted from his own genetic material and designed to be the perfect leaders and warriors. Each Primarch was unique, possessing extraordinary abilities, intelligence, and charisma that made them natural leaders of men. They were the generals of the Great Crusade, the commanders of the Space Marine Legions, and the architects of the Imperium's greatest victories. Their story is one of glory, tragedy, and the eternal struggle between loyalty and betrayal.</p>
+
+                    <h2>🧬 The Creation of the Primarchs</h2>
+                    <p><strong>The Emperor's Masterpiece:</strong></p>
+                    <p>The Primarchs were created in the Emperor's secret laboratories on Terra, each one designed to be a perfect fusion of human and superhuman traits. They were crafted from the Emperor's own genetic material, enhanced with advanced biotechnology and psychic abilities. Each Primarch was designed to excel in a specific area of warfare or leadership, making them the perfect commanders for the Space Marine Legions that would follow.</p>
+
+                    <h2>🌪️ The Scattering</h2>
+                    <p><strong>The Chaos Gods' Interference:</strong></p>
+                    <p>Before the Primarchs could be properly raised and trained, the Chaos Gods intervened, scattering them across the galaxy through the Warp. Each Primarch was sent to a different world, where they would grow to adulthood in isolation, developing their own unique personalities and abilities. This scattering was both a curse and a blessing, as it allowed each Primarch to develop their own identity while also creating the potential for corruption and betrayal.</p>
+
+                    <h2>🔍 The Discovery</h2>
+                    <p><strong>Finding the Lost Sons:</strong></p>
+                    <p>During the Great Crusade, the Emperor and his forces discovered each Primarch on their respective worlds. Each discovery was a momentous occasion, as the Emperor reunited with his lost sons and brought them into the fold of the Imperium. The Primarchs, having grown up in isolation, were often surprised to learn of their true origins and their connection to the Emperor.</p>
+
+                    <h2>⚔️ The Loyalist Primarchs</h2>
+                    <p><strong>The Nine Loyal Sons:</strong></p>
+                    <p>Nine of the Primarchs remained loyal to the Emperor during the Horus Heresy, becoming the foundation of the modern Imperium. These loyalist Primarchs included:</p>
+                    
+                    <p><strong>Roboute Guilliman (Ultramarines):</strong> The master administrator and statesman, known for his tactical brilliance and organizational skills.</p>
+                    
+                    <p><strong>Lion El'Jonson (Dark Angels):</strong> The first Primarch discovered, a master swordsman and strategist with a mysterious past.</p>
+                    
+                    <p><strong>Rogal Dorn (Imperial Fists):</strong> The master of fortification and defense, responsible for building the Imperial Palace on Terra.</p>
+                    
+                    <p><strong>Sanguinius (Blood Angels):</strong> The most beautiful and noble of the Primarchs, known for his wings and his tragic fate.</p>
+                    
+                    <p><strong>Ferrus Manus (Iron Hands):</strong> The master of technology and cybernetics, known for his metal hands and mechanical enhancements.</p>
+                    
+                    <p><strong>Vulkan (Salamanders):</strong> The master craftsman and protector of humanity, known for his compassion and his mastery of fire.</p>
+                    
+                    <p><strong>Corvus Corax (Raven Guard):</strong> The master of stealth and guerrilla warfare, known for his dark wings and his ability to move unseen.</p>
+                    
+                    <p><strong>Jaghatai Khan (White Scars):</strong> The master of speed and mobility, known for his love of freedom and his mastery of mounted warfare.</p>
+                    
+                    <p><strong>Leman Russ (Space Wolves):</strong> The master of close combat and the Emperor's executioner, known for his ferocity and his loyalty.</p>
+
+                    <h2>🔥 The Traitor Primarchs</h2>
+                    <p><strong>The Nine Fallen Sons:</strong></p>
+                    <p>Nine of the Primarchs fell to Chaos during the Horus Heresy, becoming the greatest enemies of the Imperium. These traitor Primarchs included:</p>
+                    
+                    <p><strong>Horus Lupercal (Luna Wolves/Sons of Horus):</strong> The Warmaster and the Emperor's favorite son, who became the greatest traitor in Imperial history.</p>
+                    
+                    <p><strong>Angron (World Eaters):</strong> The berserker Primarch, known for his uncontrollable rage and his Butcher's Nails implants.</p>
+                    
+                    <p><strong>Fulgrim (Emperor's Children):</strong> The perfectionist Primarch, who fell to Slaanesh and became obsessed with beauty and excess.</p>
+                    
+                    <p><strong>Magnus the Red (Thousand Sons):</strong> The master of psychic powers, who fell to Tzeentch and became a daemon prince.</p>
+                    
+                    <p><strong>Mortarion (Death Guard):</strong> The master of chemical warfare, who fell to Nurgle and became the embodiment of decay and disease.</p>
+                    
+                    <p><strong>Lorgar (Word Bearers):</strong> The religious Primarch, who fell to Chaos and became the architect of the Heresy.</p>
+                    
+                    <p><strong>Perturabo (Iron Warriors):</strong> The master of siege warfare, who fell to Chaos and became obsessed with destruction and betrayal.</p>
+                    
+                    <p><strong>Konrad Curze (Night Lords):</strong> The master of terror and fear, who fell to Chaos and became the embodiment of justice and punishment.</p>
+                    
+                    <p><strong>Alpharius/Omegon (Alpha Legion):</strong> The mysterious Primarch(s), whose true allegiance remains unknown to this day.</p>
+
+                    <h2>👑 The Primarchs' Abilities</h2>
+                    <p><strong>Superhuman Traits:</strong></p>
+                    <p>Each Primarch possessed extraordinary abilities that set them apart from ordinary humans. They were incredibly strong, fast, and durable, capable of surviving wounds that would kill a normal person. They possessed enhanced intelligence, allowing them to process information and make decisions at superhuman speeds. Many of them also possessed psychic abilities, though to varying degrees.</p>
+
+                    <h2>🏛️ The Legion System</h2>
+                    <p><strong>Commanding the Space Marines:</strong></p>
+                    <p>Each Primarch commanded a Space Marine Legion, a force of superhuman warriors created from their genetic material. These Legions were the backbone of the Great Crusade, each numbering in the tens of thousands and capable of conquering entire star systems. The Primarchs were not just commanders but also the genetic fathers of their Legions, with each Space Marine being a reflection of their Primarch's traits and abilities.</p>
+
+                    <h2>⚔️ The Great Crusade</h2>
+                    <p><strong>Conquering the Galaxy:</strong></p>
+                    <p>The Primarchs led the Great Crusade, a galaxy-spanning campaign to reunite all of humanity under the banner of the Imperium. Each Primarch was responsible for conquering specific regions of the galaxy, using their unique abilities and tactics to achieve victory. The Crusade was marked by countless battles, each one a testament to the Primarchs' skill and determination.</p>
+
+                    <h2>🔥 The Horus Heresy</h2>
+                    <p><strong>The Great Betrayal:</strong></p>
+                    <p>The Horus Heresy was the greatest tragedy in the history of the Primarchs, as half of them turned against their father and their brothers. The Heresy was a galaxy-spanning civil war that pitted Primarch against Primarch, Legion against Legion. It was a conflict that would shape the destiny of the galaxy and determine the future of humanity.</p>
+
+                    <h2>💀 The Fate of the Primarchs</h2>
+                    <p><strong>The End of an Era:</strong></p>
+                    <p>The Horus Heresy marked the end of the Primarchs' golden age. Many of them died during the conflict, while others disappeared or were lost. The surviving loyalist Primarchs either died in the years following the Heresy or disappeared mysteriously, leaving the Imperium without its greatest leaders. The traitor Primarchs became daemon princes, eternal servants of the Chaos Gods.</p>
+
+                    <h2>🌟 The Legacy</h2>
+                    <p><strong>The Eternal Impact:</strong></p>
+                    <p>The Primarchs' legacy continues to shape the galaxy to this day. Their Space Marine Chapters continue to serve the Imperium, each one a reflection of their Primarch's traits and abilities. The traitor Primarchs continue to threaten the Imperium from the Eye of Terror, leading their Chaos Space Marine warbands in eternal war against their former brothers.</p>
+
+                    <h2>🎯 The Return</h2>
+                    <p><strong>The Primarchs' Return:</strong></p>
+                    <p>In recent years, some of the Primarchs have begun to return to the galaxy. Roboute Guilliman has returned from his long slumber, taking command of the Imperium and leading it into a new era of war and conflict. The return of the Primarchs marks a new chapter in the history of the galaxy, as these legendary figures once again take their place as the leaders of humanity.</p>
+
+                    <p>The Primarchs stand as the greatest creations of the Emperor of Mankind, twenty superhuman beings who shaped the destiny of the galaxy. Their story is one of glory and tragedy, of loyalty and betrayal, of the eternal struggle between order and chaos. Though many of them are gone, their legacy continues to shape the galaxy, and their return marks a new chapter in the history of the Imperium. The Primarchs remain the greatest warriors and leaders the galaxy has ever known, and their story will continue to inspire and terrify for generations to come.</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

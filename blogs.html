@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Space Marine Helmet Image Styles */
+        .space-marine-helmet {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .space-marine-helmet img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .space-marine-helmet {
+                width: 80px;
+                height: 80px;
+                bottom: 15px;
+                left: 15px;
+            }
+        }
+
+        /* Blog Header Image Styles */
+        .blog-header-image {
+            padding: 0;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #0a0a0a 75%, #000000 100%);
+            text-align: center;
+            width: 100%;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-header-image .container {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(231, 76, 60, 0.3);
+            position: relative;
+        }
+
+        .blog-header-image .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(231, 76, 60, 0.1), transparent);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 0;
+            box-shadow: none;
+            transition: transform 0.3s ease;
+        }
+
+        .header-image:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .blog-header-image {
+                height: 50vh;
+            }
+        }
+
+
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        /* Pixel Art Base Styles */
+        * {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        body {
+            background: #000000 !important;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%),
+                linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%);
+            font-family: 'Press Start 2P', monospace !important;
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800;
+            line-height: 1.6;
+        }
+
+        /* Pixel Art Navigation */
+        .navbar {
+            background: #000000 !important;
+            border-bottom: 4px solid #00ff00 !important;
+            box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important;
+        }
+
+        .nav-container {
+            background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+        }
+
+        .nav-logo {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-logo i {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-link {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            border: 2px solid transparent !important;
+            padding: 8px 16px !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .nav-link:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #cc0000 !important;
+            box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important;
+        }
+
+        .nav-link.active {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #008800 !important;
+            box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important;
+        }
+
+        /* Pixel Art Sections */
+        .section-title {
+            color: #00ff00 !important;
+            text-shadow: 
+                3px 3px 0px #008800,
+                6px 6px 0px #006600 !important;
+            border-bottom: 4px solid #00ff00 !important;
+            padding-bottom: 10px !important;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #ff0000;
+            box-shadow: 0 4px 0 #cc0000;
+        }
+
+        /* Pixel Art Buttons */
+        .btn {
+            font-family: 'Press Start 2P', monospace !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            background: #000000 !important;
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            padding: 12px 24px !important;
+            transition: all 0.1s ease !important;
+            position: relative;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        .btn:active {
+            transform: translateY(4px) !important;
+            box-shadow: 
+                0 0 0 #cc0000,
+                0 0 0 #aa0000 !important;
+        }
+
+        .btn-primary {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #008800 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn-primary:hover {
+            background: #ff0000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        /* Pixel Art Footer */
+        .footer {
+            background: #000000 !important;
+            border-top: 4px solid #00ff00 !important;
+            box-shadow: 
+                0 -4px 0 #008800,
+                0 -8px 0 #006600 !important;
+        }
+
+        .footer h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .footer p, .footer li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .footer a {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .footer a:hover {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Social Links */
+        .social-links a {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            transition: all 0.1s ease !important;
+            box-shadow: 0 2px 0 #008800 !important;
+        }
+
+        .social-links a:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 0 0 0 #cc0000 !important;
+        }
+
+        /* Pixel Art Form Elements */
+        input, textarea, select {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            padding: 8px 12px !important;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            border-color: #ff0000 !important;
+            box-shadow: 0 0 0 2px #cc0000 !important;
+        }
+
+        /* Pixel Art Scrollbar */
+        ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+            border: 2px solid #00ff00;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border: 2px solid #008800;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0000;
+            border-color: #cc0000;
+        }
+
+        .container {
+            background: transparent !important;
+        }
+
+        /* Blogs Section Pixel Art Theme */
+        .blogs-section {
+            background: linear-gradient(135deg, #000000 0%, #001100 25%, #002200 50%, #001100 75%, #000000 100%) !important;
+            border: 4px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 0 0 2px #008800,
+                0 8px 0 #008800,
+                0 16px 0 #006600 !important;
+            position: relative;
+        }
+
+        .blogs-section::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #ff0000, #00ff00);
+            background-size: 20px 20px;
+            z-index: -1;
+            animation: pixelBorder 2s linear infinite;
+        }
+
+        @keyframes pixelBorder {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 20px; }
+        }
+
+        .blog-card {
+            background: #000000 !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px) !important;
+            border-color: #ff0000 !important;
+            box-shadow: 
+                0 8px 0 #cc0000,
+                0 12px 0 #aa0000 !important;
+        }
+
+        .blog-title {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+            font-family: 'Press Start 2P', monospace !important;
+        }
+
+        .blog-excerpt {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            font-family: 'Press Start 2P', monospace !important;
+        }
+
+        .blog-category {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            font-family: 'Press Start 2P', monospace !important;
+        }
+
+        .blog-date, .blog-author {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            font-family: 'Press Start 2P', monospace !important;
+        }
+
+        .status-badge.published {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            border: 2px solid #008800 !important;
+            font-family: 'Press Start 2P', monospace !important;
+        }
+
+        .status-badge.planned {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            border: 2px solid #cc0000 !important;
+            font-family: 'Press Start 2P', monospace !important;
+        }
+
+        .filter-btn {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .filter-btn:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            border-color: #cc0000 !important;
+        }
+
+        .filter-btn.active {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            border-color: #008800 !important;
+        }
+
+        /* Responsive Pixel Art */
+        @media (max-width: 768px) {
+            .btn {
+                padding: 8px 16px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .nav-link {
+                padding: 6px 12px !important;
+                font-size: 0.7rem !important;
+            }
+        }
+
+        /* ===== LOADING SCREEN STYLES ===== */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-screen.hidden {
+            display: none;
+        }
+
+        .loading-gif {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            filter: drop-shadow(0 0 20px #00ff00);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .loading-text {
+            color: #00ff00;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 0px #008800;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: loadingPulse 1.5s ease-in-out infinite;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 40px;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        @keyframes loadingPulse {
+            0%, 100% { 
+                opacity: 1;
+                text-shadow: 2px 2px 0px #008800, 0 0 10px #00ff00;
+            }
+            50% { 
+                opacity: 0.7;
+                text-shadow: 2px 2px 0px #008800, 0 0 20px #00ff00;
+            }
+        }
+
+        .loading-dots {
+            color: #ff0000;
+            animation: loadingDots 1s infinite;
+        }
+
+        @keyframes loadingDots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: loadingDots 1s infinite;
+        }
+
+        /* Page transition overlay */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            z-index: 99998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .page-transition.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
+    <style>
+        /* Blog Filter Styles */
+        .blog-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #007bff;
+            background: transparent;
+            color: #007bff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover {
+            background: #007bff;
+            color: white;
+        }
+        
+        .filter-btn.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        /* Status Badge Styles */
+        .status-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-badge.published {
+            background: #28a745;
+            color: white;
+        }
+        
+        .status-badge.planned {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        /* Blog Card Enhancements */
+        .blog-card {
+            position: relative;
+        }
+        
+        .blog-image {
+            position: relative;
+        }
+        
+        .blog-category {
+            background: #f8f9fa;
+            color: #6c757d;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-filters {
+                justify-content: center;
+            }
+            
+            .filter-btn {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <img src="warhammer-stance.gif" alt="Loading..." class="loading-gif">
+        <div class="loading-text">LOADING<span class="loading-dots"></span></div>
+    </div>
+
+    <!-- Page Transition Overlay -->
+    <div class="page-transition" id="pageTransition"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link active">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Space Marine Helmet -->
+    <div class="space-marine-helmet" id="spaceMarineHelmet">
+        <img src="20.gif" alt="Space Marine Helmet" />
+    </div>
+
+
+    <!-- Blog Header Image -->
+    <section class="blog-header-image">
+        <div class="container">
+            <img src="Lex Verum Astartes.jpg" alt="Lex Verum Astartes" class="header-image">
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section class="blogs-section">
+        <div class="container">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <div class="blogs-grid">
+                <!-- Blog posts will be generated here -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script src="https://genieai.zlz.me/widget/loader.js" data-key="gw_193cb7310ac1f204380bfcc07ebb7098" data-api-url="https://genieai.zlz.me"></script>
+
+<script>
+    // Loading Screen Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        const pageTransition = document.getElementById('pageTransition');
+        
+        // Show loading screen on page load
+        function showLoadingScreen() {
+            loadingScreen.style.display = 'flex';
+            loadingScreen.classList.remove('fade-out', 'hidden');
+            loadingScreen.style.opacity = '1';
+        }
+        
+        // Hide loading screen with fade out
+        function hideLoadingScreen() {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 500);
+        }
+        
+        // Show page transition overlay
+        function showPageTransition() {
+            pageTransition.classList.add('active');
+        }
+        
+        // Hide page transition overlay
+        function hidePageTransition() {
+            pageTransition.classList.remove('active');
+        }
+        
+        // Initial page load - show loading screen for 3 seconds
+        setTimeout(() => {
+            hideLoadingScreen();
+        }, 3000);
+        
+        // Handle navigation links for page transitions
+        const navLinks = document.querySelectorAll('a[href$=".html"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Don't show transition for same page
+                if (this.href === window.location.href) {
+                    return;
+                }
+                
+                e.preventDefault();
+                const targetUrl = this.href;
+                
+                // Show transition overlay
+                showPageTransition();
+                
+                // Show loading screen after a brief delay
+                setTimeout(() => {
+                    showLoadingScreen();
+                    
+                    // Navigate to new page after loading screen is visible
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 100);
+                }, 300);
+            });
+        });
+        
+        // Handle browser back/forward buttons
+        window.addEventListener('beforeunload', function() {
+            showPageTransition();
+        });
+        
+        // Handle page visibility changes (tab switching)
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // Page is hidden, could show transition
+            } else {
+                // Page is visible again
+                hidePageTransition();
+            }
+        });
+        
+        // Preload the GIF for smoother experience
+        const gif = new Image();
+        gif.src = 'warhammer-stance.gif';
+        
+        // Add loading states to buttons
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.href && this.href.includes('.html')) {
+                    // This is a navigation button, show transition
+                    showPageTransition();
+                }
+            });
+        });
+    });
+    
+    // Global function to show loading screen (can be called from other scripts)
+    window.showLoadingScreen = function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.style.display = 'flex';
+        loadingScreen.classList.remove('fade-out', 'hidden');
+        loadingScreen.style.opacity = '1';
+    };
+    
+    // Global function to hide loading screen
+    window.hideLoadingScreen = function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.classList.add('fade-out');
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+        }, 500);
+    };
+</script>
+    <script>
+        // Generate blog posts dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogsGrid = document.querySelector('.blogs-grid');
+            const totalBlogs = 200;
+            
+            // Comprehensive blog data structure for future-proofing
+            const blogData = {
+                // Hardware Fundamentals (1-10)
+                1: { title: "The Evolution of CPU Architecture: From Intel 4004 to Modern Processors", emoji: "🧠", excerpt: "Explore the fascinating journey of CPU evolution from the first microprocessor to today's multi-core powerhouses.", category: "Hardware Fundamentals", status: "published" },
+                2: { title: "Graphics Processing Units: The Evolution from 2D to Ray Tracing", emoji: "🎮", excerpt: "Discover how GPUs have transformed from simple 2D accelerators to complex ray tracing powerhouses.", category: "Hardware Fundamentals", status: "published" },
+                3: { title: "RAM Evolution: From DRAM to DDR5", emoji: "💾", excerpt: "Learn about the evolution of memory technology and how DDR5 is revolutionizing system performance.", category: "Hardware Fundamentals", status: "published" },
+                4: { title: "Motherboard Architecture: The Backbone of Computing", emoji: "🔌", excerpt: "Understand the critical role motherboards play in connecting and coordinating all system components.", category: "Hardware Fundamentals", status: "published" },
+                5: { title: "Storage Technology Evolution: From HDDs to NVMe SSDs", emoji: "💿", excerpt: "Trace the evolution of storage from spinning disks to lightning-fast NVMe solid-state drives.", category: "Hardware Fundamentals", status: "published" },
+                6: { title: "Intel vs AMD: The Ultimate CPU Battle", emoji: "⚔️", excerpt: "Compare the two CPU giants and discover which processor is right for your needs.", category: "Hardware Fundamentals", status: "published" },
+                7: { title: "NVIDIA vs AMD: The Ultimate GPU Battle", emoji: "🎯", excerpt: "Dive deep into the graphics card rivalry and find the perfect GPU for your gaming rig.", category: "Hardware Fundamentals", status: "published" },
+                8: { title: "RAM Manufacturers: The Giants Behind Memory Technology", emoji: "🏭", excerpt: "Meet the companies that create the memory chips powering your computer.", category: "Hardware Fundamentals", status: "published" },
+                9: { title: "Motherboard Manufacturers: The Architects of Computing", emoji: "🏗️", excerpt: "Explore the leading motherboard manufacturers and their innovative designs.", category: "Hardware Fundamentals", status: "published" },
+                10: { title: "The Ultimate Hardware Buying Guide 2024", emoji: "🛒", excerpt: "Your comprehensive guide to building the perfect PC with expert recommendations and tips.", category: "Hardware Fundamentals", status: "published" },
+                
+                // Warhammer 40K Themed Content (11-20)
+                11: { title: "The Adeptus Mechanicus: Sacred Technology and Machine Spirits", emoji: "⚙️", excerpt: "Learn the sacred rites of hardware maintenance from the Tech-Priests of Mars.", category: "Warhammer 40K", status: "published" },
+                12: { title: "The Space Marines: Elite Gaming Rigs of the Imperium", emoji: "⚔️", excerpt: "Build gaming systems worthy of the Emperor's finest warriors with these elite configurations.", category: "Warhammer 40K", status: "published" },
+                13: { title: "The Chaos Gods: Overclocking and Performance Enhancement", emoji: "🔥", excerpt: "Embrace the dark arts of overclocking with the forbidden knowledge of the Ruinous Powers.", category: "Warhammer 40K", status: "published" },
+                14: { title: "The Orks: Budget Gaming and Creative Solutions", emoji: "🔧", excerpt: "Build powerful gaming rigs the Ork way - maximum performance for minimum teef!", category: "Warhammer 40K", status: "published" },
+                15: { title: "The Necrons: Ancient Technology and Future-Proofing", emoji: "⚡", excerpt: "Learn the ancient wisdom of building systems that transcend time and remain powerful for ages.", category: "Warhammer 40K", status: "published" },
+                16: { title: "The Tyranids: Swarm Intelligence and Multi-GPU Systems", emoji: "🦗", excerpt: "Harness the power of the Hive Mind with multi-GPU systems that work as one.", category: "Warhammer 40K", status: "published" },
+                17: { title: "The Eldar: Precision Engineering and Aesthetic Excellence", emoji: "✨", excerpt: "Build systems of aesthetic perfection with the precision and beauty of the Craftworld.", category: "Warhammer 40K", status: "published" },
+                18: { title: "The Tau Empire: Advanced Technology and Innovation", emoji: "🔬", excerpt: "Embrace the cutting edge of technology with the innovative approach of the Greater Good.", category: "Warhammer 40K", status: "published" },
+                19: { title: "The Dark Eldar: Extreme Performance and Dangerous Overclocking", emoji: "💀", excerpt: "Push your hardware to the absolute limits with the dangerous arts of the Dark City.", category: "Warhammer 40K", status: "published" },
+                20: { title: "The Imperium of Man: The Ultimate Hardware Empire", emoji: "🏛️", excerpt: "Build systems worthy of the greatest empire with the strength and reliability of the Imperium.", category: "Warhammer 40K", status: "published" },
+                
+                // Dark Souls Themed Content (21-25)
+                21: { title: "The Chosen Undead: Building Your First Gaming Rig", emoji: "🔥", excerpt: "Begin your journey in PC building with the wisdom of the Chosen Undead and the first flame.", category: "Dark Souls", status: "published" },
+                22: { title: "The Lords of Cinder: High-End Gaming Rigs", emoji: "👑", excerpt: "Build legendary systems with the absolute power and majesty of the Lords of Cinder.", category: "Dark Souls", status: "published" },
+                23: { title: "The Age of Dark: Budget Gaming and Creative Solutions", emoji: "🌑", excerpt: "Master the art of budget building with the resourcefulness of the age of dark.", category: "Dark Souls", status: "published" },
+                24: { title: "The Abyss: Extreme Overclocking and Dangerous Modifications", emoji: "⚫", excerpt: "Dive into the depths of extreme overclocking with the dark power of the abyss.", category: "Dark Souls", status: "published" },
+                25: { title: "The Cycle of Fire: Future-Proofing and the Eternal Quest", emoji: "♾️", excerpt: "Build systems for the ages with the eternal wisdom of the cycle of fire and dark.", category: "Dark Souls", status: "published" },
+                
+                // Gaming Performance (26-30)
+                26: { title: "Latest Hardware Releases: What's New in 2024", emoji: "🆕", excerpt: "Stay updated with the latest hardware releases and industry announcements.", category: "Gaming Performance", status: "published" },
+                27: { title: "Ray Tracing: The Future of Gaming Graphics", emoji: "✨", excerpt: "Explore the revolutionary technology that's changing how we experience games.", category: "Gaming Performance", status: "published" },
+                28: { title: "4K Gaming: Building the Ultimate Visual Experience", emoji: "🖥️", excerpt: "Discover what it takes to build a system capable of true 4K gaming performance.", category: "Gaming Performance", status: "published" },
+                29: { title: "VR Gaming: Hardware Requirements and Optimization", emoji: "🥽", excerpt: "Everything you need to know about building a PC for virtual reality gaming.", category: "Gaming Performance", status: "published" },
+                30: { title: "Esports Gaming: Competitive Performance Tuning", emoji: "🏆", excerpt: "Optimize your system for competitive gaming with professional-grade performance tuning.", category: "Gaming Performance", status: "published" },
+                
+                // Cooling Solutions (31-35)
+                31: { title: "Air Cooling Mastery: From Stock to High-End", emoji: "🌪️", excerpt: "Master the art of air cooling with comprehensive guides to CPU and case cooling.", category: "Cooling Solutions", status: "published" },
+                32: { title: "Liquid Cooling: Custom Loops and AIOs", emoji: "💧", excerpt: "Dive into liquid cooling with custom loops, AIOs, and advanced cooling techniques.", category: "Cooling Solutions", status: "published" },
+                33: { title: "Thermal Management: Keeping Your System Cool", emoji: "🌡️", excerpt: "Learn essential thermal management techniques to keep your hardware running optimally.", category: "Cooling Solutions", status: "published" },
+                34: { title: "Silent PC Building: Quiet Performance", emoji: "🔇", excerpt: "Build a powerful yet silent PC with advanced noise reduction techniques.", category: "Cooling Solutions", status: "published" },
+                35: { title: "Exotic Cooling: LN2 and Phase Change", emoji: "❄️", excerpt: "Explore extreme cooling solutions for record-breaking overclocking.", category: "Cooling Solutions", status: "published" },
+                
+                // Troubleshooting (36-40)
+                36: { title: "Common PC Issues: Troubleshooting Guide", emoji: "🔧", excerpt: "Comprehensive guide to diagnosing and fixing the most common PC problems.", category: "Troubleshooting", status: "published" },
+                37: { title: "Hardware Diagnostics: Testing Your Components", emoji: "🔍", excerpt: "Learn how to test and diagnose hardware issues with professional diagnostic tools.", category: "Troubleshooting", status: "published" },
+                38: { title: "Software Problems: Windows and Driver Issues", emoji: "💻", excerpt: "Troubleshoot software issues, driver conflicts, and Windows system problems.", category: "Troubleshooting", status: "published" },
+                39: { title: "Performance Issues: Optimization and Tuning", emoji: "⚡", excerpt: "Identify and resolve performance bottlenecks to optimize your system.", category: "Troubleshooting", status: "published" },
+                40: { title: "Advanced Diagnostics: Professional Troubleshooting", emoji: "🔬", excerpt: "Professional-level diagnostic techniques for complex system issues.", category: "Troubleshooting", status: "published" },
+                
+                // Community Topics (41-50)
+                41: { title: "PC Building Communities: Finding Your Tribe", emoji: "👥", excerpt: "Discover the best PC building communities and find your perfect group of enthusiasts.", category: "Community", status: "published" },
+                42: { title: "Online Forums and Communities: Digital Gathering Places", emoji: "💬", excerpt: "Explore the landscape of online PC building communities and forums.", category: "Community", status: "published" },
+                43: { title: "Local Meetups and Events: Building Real-World Connections", emoji: "🤝", excerpt: "Learn how to find and organize local PC building meetups and events.", category: "Community", status: "published" },
+                44: { title: "Sharing Builds and Projects: Showcasing Your Work", emoji: "📸", excerpt: "Master the art of documenting and sharing your PC builds with the community.", category: "Community", status: "published" },
+                45: { title: "Mentoring and Learning: Growing Together", emoji: "🎓", excerpt: "Build mentoring relationships and create a culture of continuous learning.", category: "Community", status: "published" },
+                46: { title: "Collaborative Projects: Building Together", emoji: "🤝", excerpt: "Join collaborative projects and build something greater than the sum of its parts.", category: "Community", status: "published" },
+                47: { title: "Knowledge Sharing: Building the Collective Wisdom", emoji: "📚", excerpt: "Contribute to the community's collective knowledge through effective sharing.", category: "Community", status: "published" },
+                48: { title: "Support Networks: Helping Each Other Succeed", emoji: "🤗", excerpt: "Build and participate in support networks that help everyone succeed.", category: "Community", status: "published" },
+                49: { title: "Competitions and Challenges: Pushing Boundaries", emoji: "🏆", excerpt: "Participate in competitions and challenges that drive innovation and creativity.", category: "Community", status: "published" },
+                50: { title: "Building Lasting Relationships: The Heart of Community", emoji: "💝", excerpt: "Create meaningful relationships that extend far beyond technical discussions.", category: "Community", status: "published" },
+                
+                // Build Guides (51-55)
+                51: { title: "Beginner PC Building Guide: Your First Build", emoji: "🛠️", excerpt: "Complete guide to building your first PC with step-by-step instructions and tips.", category: "Build Guides", status: "published" },
+                52: { title: "Gaming PC Build Guide: Power and Performance", emoji: "🎮", excerpt: "Build the ultimate gaming PC with expert component selection and optimization tips.", category: "Build Guides", status: "published" },
+                53: { title: "Workstation Build Guide: Professional Performance", emoji: "💼", excerpt: "Professional workstation builds for content creation, engineering, and productivity.", category: "Build Guides", status: "published" },
+                54: { title: "Budget PC Build Guide: Maximum Value", emoji: "💰", excerpt: "Build a powerful PC on a budget with smart component selection and money-saving tips.", category: "Build Guides", status: "published" },
+                55: { title: "High-End PC Build Guide: Ultimate Performance", emoji: "🚀", excerpt: "Ultimate high-end PC builds with premium components and extreme performance.", category: "Build Guides", status: "published" },
+                
+                // Dark Souls Story (56-60)
+                56: { title: "Dark Souls 1: The Age of Fire and the Chosen Undead", emoji: "🔥", excerpt: "Explore the epic story of Dark Souls 1, from the Age of Fire to the Chosen Undead's journey.", category: "Dark Souls Story", status: "published" },
+                57: { title: "Dark Souls 2: The Curse of the Undead and the Bearer of the Curse", emoji: "💀", excerpt: "Dive into Dark Souls 2's story of memory loss, the curse, and the kingdom of Drangleic.", category: "Dark Souls Story", status: "published" },
+                58: { title: "Dark Souls 3: The End of Fire and the Ashen One", emoji: "⚰️", excerpt: "Discover the final chapter of Dark Souls 3, where the cycle reaches its end.", category: "Dark Souls Story", status: "published" },
+                59: { title: "Dark Souls Lore: Connections and Continuity Across the Trilogy", emoji: "🔗", excerpt: "Uncover the deep connections and lore that bind the Dark Souls trilogy together.", category: "Dark Souls Story", status: "published" },
+                60: { title: "Dark Souls Philosophy: Themes of Mortality, Sacrifice, and the Human Condition", emoji: "💭", excerpt: "Explore the profound philosophical themes and deeper meanings of the Dark Souls series.", category: "Dark Souls Story", status: "published" },
+                
+                // Warhammer 40K Story (61-70)
+                61: { title: "The Horus Heresy: The Greatest Betrayal in Imperial History", emoji: "⚔️", excerpt: "Explore the epic civil war that nearly destroyed the Imperium and shaped the galaxy forever.", category: "Warhammer 40K Story", status: "published" },
+                62: { title: "The Great Crusade: Humanity's Reclaiming of the Galaxy", emoji: "🚀", excerpt: "Discover the epic campaign that reunited humanity and established the Imperium of Man.", category: "Warhammer 40K Story", status: "published" },
+                63: { title: "The Age of Strife: The Long Night of Humanity", emoji: "🌑", excerpt: "Learn about the dark period that preceded the Great Crusade and the rise of the Emperor.", category: "Warhammer 40K Story", status: "published" },
+                64: { title: "The Emperor of Mankind: The Master of Humanity", emoji: "👑", excerpt: "Explore the life, goals, and ultimate sacrifice of the most powerful being in the galaxy.", category: "Warhammer 40K Story", status: "published" },
+                65: { title: "The Primarchs: The Emperor's Twenty Sons", emoji: "👥", excerpt: "Meet the superhuman generals who led the Space Marine Legions and shaped the galaxy.", category: "Warhammer 40K Story", status: "published" },
+                66: { title: "The Space Marines: Angels of Death", emoji: "⚔️", excerpt: "Discover the superhuman warriors who serve as the Imperium's greatest defenders.", category: "Warhammer 40K Story", status: "published" },
+                67: { title: "The Chaos Gods: The Ruinous Powers", emoji: "🔥", excerpt: "Learn about the four Chaos Gods and their eternal war against order and reason.", category: "Warhammer 40K Story", status: "published" },
+                68: { title: "The Xenos Races: Alien Threats to Humanity", emoji: "👽", excerpt: "Explore the various alien species that threaten the Imperium of Man.", category: "Warhammer 40K Story", status: "published" },
+                69: { title: "The Imperium of Man: The Greatest Empire in the Galaxy", emoji: "🏛️", excerpt: "Discover the vast human empire that spans the galaxy and its complex organization.", category: "Warhammer 40K Story", status: "published" },
+                70: { title: "The Current Timeline: The 41st Millennium and Beyond", emoji: "⏰", excerpt: "Explore the current state of the galaxy and the ongoing conflicts of the 41st millennium.", category: "Warhammer 40K Story", status: "published" },
+                
+                // Bloodborne Story (71-80)
+                71: { title: "The Healing Church: The Rise of Blood Healing", emoji: "⛪", excerpt: "Discover the origins of the Healing Church and their revolutionary blood healing techniques.", category: "Bloodborne Story", status: "published" },
+                72: { title: "The Great Ones: Cosmic Entities and Their Influence", emoji: "🌙", excerpt: "Explore the mysterious Great Ones and their profound impact on Yharnam's fate.", category: "Bloodborne Story", status: "published" },
+                73: { title: "The Scourge of Beasts: The Plague That Consumed Yharnam", emoji: "🐺", excerpt: "Learn about the beast plague that transformed Yharnam into a nightmare of blood and horror.", category: "Bloodborne Story", status: "published" },
+                74: { title: "The Hunter's Dream: The Nexus Between Life and Death", emoji: "🌹", excerpt: "Uncover the secrets of the Hunter's Dream and its connection to the cosmic cycle.", category: "Bloodborne Story", status: "published" },
+                75: { title: "The School of Mensis: Forbidden Knowledge and Madness", emoji: "🎭", excerpt: "Delve into the dark practices of the School of Mensis and their pursuit of forbidden knowledge.", category: "Bloodborne Story", status: "published" },
+                76: { title: "The Vilebloods: The Noble Bloodline of Cainhurst", emoji: "👑", excerpt: "Explore the tragic history of the Vilebloods and their cursed bloodline.", category: "Bloodborne Story", status: "published" },
+                77: { title: "The Night of the Hunt: Yharnam's Eternal Cycle", emoji: "🌃", excerpt: "Understand the endless cycle of the Hunt and its significance to Yharnam's fate.", category: "Bloodborne Story", status: "published" },
+                78: { title: "The Doll and Gehrman: Guardians of the Dream", emoji: "🪆", excerpt: "Discover the true nature of the Doll and Gehrman's role in the Hunter's Dream.", category: "Bloodborne Story", status: "published" },
+                79: { title: "The Insight and Frenzy: The Price of Knowledge", emoji: "👁️", excerpt: "Learn about Insight, Frenzy, and the dangerous knowledge that drives men to madness.", category: "Bloodborne Story", status: "published" },
+                80: { title: "The True Ending: Ascension and the New Dawn", emoji: "🌅", excerpt: "Explore the true ending of Bloodborne and the Hunter's ultimate transformation.", category: "Bloodborne Story", status: "published" },
+                
+                // Overclocking Series (81-85)
+                81: { title: "GPU Overclocking Fundamentals: A Complete Beginner's Guide", emoji: "🎮", excerpt: "Learn the fundamentals of GPU overclocking with this comprehensive beginner's guide covering tools, safety, and step-by-step processes.", category: "Overclocking", status: "published" },
+                82: { title: "CPU Overclocking Mastery: Unlock Your Processor's True Potential", emoji: "🧠", excerpt: "Master CPU overclocking with advanced techniques, hardware requirements, and professional methods to unlock maximum performance.", category: "Overclocking", status: "published" },
+                83: { title: "RAM Overclocking Deep Dive: Maximize Your Memory Performance", emoji: "💾", excerpt: "Deep dive into RAM overclocking with timing optimization, DDR4 vs DDR5 techniques, and memory performance maximization.", category: "Overclocking", status: "published" },
+                84: { title: "Advanced Overclocking Techniques: Pushing Hardware to the Extreme", emoji: "⚡", excerpt: "Explore extreme overclocking methods including LN2 cooling, voltage modding, and professional techniques used by competitive overclockers.", category: "Overclocking", status: "published" },
+                85: { title: "Overclocking Troubleshooting Guide: Fix Common Issues and Optimize Performance", emoji: "🔧", excerpt: "Comprehensive troubleshooting guide for overclocking problems, diagnostic tools, and solutions to achieve stable high-performance overclocks.", category: "Overclocking", status: "published" }
+            };
+            
+            // Function to generate blog post with enhanced features
+            function generateBlogPost(i) {
+                const blogPost = document.createElement('div');
+                blogPost.className = 'blog-card';
+                
+                // Get data for this blog post
+                const data = blogData[i] || {
+                    title: `Blog Post ${i}`,
+                    emoji: "📝",
+                    excerpt: "This is a placeholder blog post. Content will be added here in the future.",
+                    category: "General",
+                    status: "planned"
+                };
+                
+                // Add status indicator
+                const statusIndicator = data.status === 'published' ? 
+                    '<span class="status-badge published">Published</span>' : 
+                    '<span class="status-badge planned">Coming Soon</span>';
+                
+                blogPost.innerHTML = `
+                    <div class="blog-image">
+                        <div class="blog-emoji">${data.emoji}</div>
+                        ${statusIndicator}
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">${data.title}</h3>
+                        <p class="blog-excerpt">${data.excerpt}</p>
+                        <div class="blog-meta">
+                            <span class="blog-category">${data.category}</span>
+                            <span class="blog-date">${new Date().toLocaleDateString()}</span>
+                            <span class="blog-author">Hardware Heaven Team</span>
+                        </div>
+                        <a href="blog-${i}.html" class="btn btn-primary">Read More</a>
+                    </div>
+                `;
+                return blogPost;
+            }
+            
+            // Generate all blog posts
+            for (let i = 1; i <= totalBlogs; i++) {
+                blogsGrid.appendChild(generateBlogPost(i));
+            }
+            
+            // Add filtering functionality
+            const filterButtons = document.createElement('div');
+            filterButtons.className = 'blog-filters';
+            filterButtons.innerHTML = `
+                <button class="filter-btn active" data-filter="all">All Posts</button>
+                <button class="filter-btn" data-filter="published">Published</button>
+                <button class="filter-btn" data-filter="planned">Coming Soon</button>
+                <button class="filter-btn" data-filter="Hardware Fundamentals">Hardware Fundamentals</button>
+                <button class="filter-btn" data-filter="Warhammer 40K">Warhammer 40K</button>
+                <button class="filter-btn" data-filter="Dark Souls">Dark Souls</button>
+                <button class="filter-btn" data-filter="Gaming Performance">Gaming Performance</button>
+                <button class="filter-btn" data-filter="Cooling Solutions">Cooling Solutions</button>
+                <button class="filter-btn" data-filter="Build Guides">Build Guides</button>
+                <button class="filter-btn" data-filter="Troubleshooting">Troubleshooting</button>
+                <button class="filter-btn" data-filter="Overclocking">Overclocking</button>
+                <button class="filter-btn" data-filter="Industry News">Industry News</button>
+                <button class="filter-btn" data-filter="Advanced Topics">Advanced Topics</button>
+                <button class="filter-btn" data-filter="Community">Community</button>
+            `;
+            
+            // Insert filter buttons before the blogs grid
+            blogsGrid.parentNode.insertBefore(filterButtons, blogsGrid);
+            
+            // Add filter functionality
+            filterButtons.addEventListener('click', function(e) {
+                if (e.target.classList.contains('filter-btn')) {
+                    // Update active button
+                    filterButtons.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    const filter = e.target.dataset.filter;
+                    const blogCards = blogsGrid.querySelectorAll('.blog-card');
+                    
+                    blogCards.forEach(card => {
+                        const category = card.querySelector('.blog-category').textContent;
+                        const status = card.querySelector('.status-badge').classList.contains('published') ? 'published' : 'planned';
+                        
+                        if (filter === 'all' || 
+                            filter === category || 
+                            filter === status) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Diagnostics: Testing Your Components - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">🔍 Hardware Diagnostics: Testing Your Components</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">🔍</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <p>When your PC starts acting up, the first step is to identify which component is causing the problem. Hardware diagnostics tools help you test each component systematically to pinpoint issues before they become major problems. This guide covers the essential diagnostic tools and techniques for testing your PC's hardware.</p>
+
+                    <h2>🖥️ CPU Testing</h2>
+                    <p><strong>Prime95:</strong> The gold standard for CPU stress testing. It runs intensive mathematical calculations to test CPU stability and thermal performance.</p>
+                    <ul>
+                        <li>Download and run Prime95</li>
+                        <li>Select "Just stress testing" and choose "Small FFTs" for maximum heat</li>
+                        <li>Monitor temperatures with HWiNFO64 or Core Temp</li>
+                        <li>Run for at least 30 minutes to ensure stability</li>
+                    </ul>
+
+                    <p><strong>AIDA64:</strong> Comprehensive system information and stress testing tool.</p>
+                    <ul>
+                        <li>Provides detailed system information</li>
+                        <li>Includes CPU, memory, and GPU stress tests</li>
+                        <li>Real-time monitoring of temperatures and voltages</li>
+                    </ul>
+
+                    <h2>🧠 Memory (RAM) Testing</h2>
+                    <p><strong>MemTest86:</strong> The most thorough memory testing tool available.</p>
+                    <ul>
+                        <li>Create a bootable USB drive with MemTest86</li>
+                        <li>Boot from USB and let it run multiple passes</li>
+                        <li>Any errors indicate faulty RAM modules</li>
+                        <li>Test each stick individually to isolate problems</li>
+                    </ul>
+
+                    <p><strong>Windows Memory Diagnostic:</strong> Built-in Windows tool for basic memory testing.</p>
+                    <ul>
+                        <li>Type "mdsched.exe" in Run dialog</li>
+                        <li>Choose "Restart now and check for problems"</li>
+                        <li>System will restart and run memory tests</li>
+                    </ul>
+
+                    <h2>🎮 Graphics Card Testing</h2>
+                    <p><strong>FurMark:</strong> GPU stress testing and benchmarking tool.</p>
+                    <ul>
+                        <li>Runs intensive graphics workloads</li>
+                        <li>Tests GPU stability and thermal performance</n                        <li>Monitor GPU temperatures and fan speeds</li>
+                        <li>Watch for artifacts or crashes during testing</li>
+                    </ul>
+
+                    <p><strong>3DMark:</strong> Professional graphics benchmarking suite.</p>
+                    <ul>
+                        <li>Comprehensive graphics performance testing</li>
+                        <li>Compare results with similar hardware</li>
+                        <li>Stress test mode for stability testing</li>
+                        <li>Detailed performance analysis</li>
+                    </ul>
+
+                    <p><strong>GPU-Z:</strong> Graphics card information and monitoring tool.</p>
+                    <ul>
+                        <li>Detailed GPU specifications and sensors</li>
+                        <li>Real-time monitoring of temperatures, clocks, and usage</li>
+                        <li>Logging capabilities for long-term monitoring</li>
+                    </ul>
+
+                    <h2>💾 Storage Testing</h2>
+                    <p><strong>CrystalDiskInfo:</strong> Hard drive and SSD health monitoring.</p>
+                    <ul>
+                        <li>Displays SMART data and drive health status</li>
+                        <li>Temperature monitoring and alerts</li>
+                        <li>Identifies potential drive failures early</li>
+                    </ul>
+
+                    <p><strong>CrystalDiskMark:</strong> Storage performance benchmarking.</p>
+                    <ul>
+                        <li>Tests sequential and random read/write speeds</li>
+                        <li>Compare performance between different drives</li>
+                        <li>Useful for identifying slow or failing drives</li>
+                    </ul>
+
+                    <p><strong>HD Tune:</strong> Comprehensive hard drive testing tool.</p>
+                    <ul>
+                        <li>Error scanning for bad sectors</li>
+                        <li>Performance benchmarking</li>
+                        <li>Health monitoring and SMART data</li>
+                    </ul>
+
+                    <h2>⚡ Power Supply Testing</h2>
+                    <p><strong>PSU Tester:</strong> Hardware device for testing power supply functionality.</p>
+                    <ul>
+                        <li>Tests all voltage rails (3.3V, 5V, 12V)</li>
+                        <li>Checks for proper voltage levels and stability</li>
+                        <li>Identifies failing power supplies quickly</li>
+                    </ul>
+
+                    <p><strong>Software Monitoring:</strong> Use HWiNFO64 to monitor power supply voltages.</p>
+                    <ul>
+                        <li>Monitor voltage levels in real-time</li>
+                        <li>Look for voltage drops under load</li>
+                        <li>Check for voltage fluctuations or instability</li>
+                    </ul>
+
+                    <h2>🌡️ Temperature Monitoring</h2>
+                    <p><strong>HWiNFO64:</strong> Comprehensive hardware monitoring tool.</p>
+                    <ul>
+                        <li>Monitors all system temperatures</li>
+                        <li>Real-time voltage and fan speed monitoring</li>
+                        <li>Logging capabilities for long-term analysis</li>
+                        <li>Alerts for high temperatures or voltages</li>
+                    </ul>
+
+                    <p><strong>Core Temp:</strong> CPU temperature monitoring.</p>
+                    <ul>
+                        <li>Simple, lightweight CPU temperature monitoring</li>
+                        <li>Per-core temperature display</n                        <li>Overheating protection and alerts</li>
+                    </ul>
+
+                    <h2>🔧 Motherboard and System Testing</h2>
+                    <p><strong>CPU-Z:</strong> System information and validation tool.</p>
+                    <ul>
+                        <li>Detailed CPU, memory, and motherboard information</li>
+                        <li>Real-time clock speed monitoring</li>
+                        <li>Validation and benchmarking features</li>
+                    </ul>
+
+                    <p><strong>Speccy:</strong> System information and temperature monitoring.</p>
+                    <ul>
+                        <li>Comprehensive system overview</li>
+                        <li>Temperature monitoring for all components</li>
+                        <li>Easy-to-read interface</li>
+                    </ul>
+
+                    <h2>📊 Benchmarking and Performance Testing</h2>
+                    <p><strong>UserBenchmark:</strong> Quick system performance assessment.</p>
+                    <ul>
+                        <li>Tests CPU, GPU, RAM, and storage performance</li>
+                        <li>Compares results with similar systems</li>
+                        <li>Identifies underperforming components</li>
+                    </ul>
+
+                    <p><strong>PassMark PerformanceTest:</strong> Comprehensive system benchmarking.</p>
+                    <ul>
+                        <li>Tests all major system components</li>
+                        <li>Detailed performance analysis and reporting</li>
+                        <li>Compare results with database of other systems</li>
+                    </ul>
+
+                    <h2>🛠️ Diagnostic Workflow</h2>
+                    <ol>
+                        <li><strong>Start with System Information:</strong> Use CPU-Z and HWiNFO64 to get baseline information</li>
+                        <li><strong>Monitor Temperatures:</strong> Check idle temperatures before stress testing</li>
+                        <li><strong>Test Memory First:</strong> Run MemTest86 to rule out RAM issues</li>
+                        <li><strong>CPU Stress Test:</strong> Use Prime95 to test CPU stability</li>
+                        <li><strong>GPU Testing:</strong> Run FurMark or 3DMark for graphics card testing</li>
+                        <li><strong>Storage Health:</strong> Check SMART data with CrystalDiskInfo</li>
+                        <li><strong>Power Supply:</strong> Monitor voltages under load</li>
+                        <li><strong>Full System Test:</strong> Run comprehensive benchmarks</li>
+                    </ol>
+
+                    <h2>⚠️ Safety Tips</h2>
+                    <ul>
+                        <li><strong>Monitor Temperatures:</strong> Never let components exceed safe operating temperatures</li>
+                        <li><strong>Gradual Testing:</strong> Start with light tests and gradually increase intensity</li>
+                        <li><strong>Backup Data:</strong> Always backup important data before stress testing</li>
+                        <li><strong>Stop on Errors:</strong> If you see errors or artifacts, stop testing immediately</li>
+                        <li><strong>Proper Cooling:</strong> Ensure adequate cooling before running stress tests</li>
+                    </ul>
+
+                    <p>Regular hardware diagnostics help you catch problems early and maintain optimal system performance. Make it a habit to run these tests periodically, especially after hardware changes or when experiencing system instability.</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

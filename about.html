@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Space Marine Helmet Image Styles */
+        .space-marine-helmet {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .space-marine-helmet img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .space-marine-helmet {
+                width: 80px;
+                height: 80px;
+                bottom: 15px;
+                left: 15px;
+            }
+        }
+
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        /* Pixel Art Base Styles */
+        * {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        body {
+            background: #000000 !important;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%),
+                linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%);
+            font-family: 'Press Start 2P', monospace !important;
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800;
+            line-height: 1.6;
+        }
+
+        /* Pixel Art Navigation */
+        .navbar {
+            background: #000000 !important;
+            border-bottom: 4px solid #00ff00 !important;
+            box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important;
+        }
+
+        .nav-container {
+            background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+        }
+
+        .nav-logo {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-logo i {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-link {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            border: 2px solid transparent !important;
+            padding: 8px 16px !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .nav-link:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #cc0000 !important;
+            box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important;
+        }
+
+        .nav-link.active {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #008800 !important;
+            box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important;
+        }
+
+        /* Pixel Art Sections */
+        .section-title {
+            color: #00ff00 !important;
+            text-shadow: 
+                3px 3px 0px #008800,
+                6px 6px 0px #006600 !important;
+            border-bottom: 4px solid #00ff00 !important;
+            padding-bottom: 10px !important;
+            position: relative;
+            text-align: center !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            hyphens: auto !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            font-size: 1.5rem !important;
+            font-weight: bold !important;
+            margin-bottom: 20px !important;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #ff0000;
+            box-shadow: 0 4px 0 #cc0000;
+        }
+
+        /* Pixel Art Buttons */
+        .btn {
+            font-family: 'Press Start 2P', monospace !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            background: #000000 !important;
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            padding: 12px 24px !important;
+            transition: all 0.1s ease !important;
+            position: relative;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        .btn:active {
+            transform: translateY(4px) !important;
+            box-shadow: 
+                0 0 0 #cc0000,
+                0 0 0 #aa0000 !important;
+        }
+
+        .btn-primary {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #008800 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn-primary:hover {
+            background: #ff0000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        /* Pixel Art Cards */
+        .product-card, .feature-card, .stats-card {
+            background: #000000 !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .product-card:hover, .feature-card:hover, .stats-card:hover {
+            transform: translateY(-4px) !important;
+            border-color: #ff0000 !important;
+            box-shadow: 
+                0 8px 0 #cc0000,
+                0 12px 0 #aa0000 !important;
+        }
+
+        .product-card h3, .feature-card h3, .stats-card h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .product-card p, .feature-card p, .stats-card p {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        /* Pixel Art Footer */
+        .footer {
+            background: #000000 !important;
+            border-top: 4px solid #00ff00 !important;
+            box-shadow: 
+                0 -4px 0 #008800,
+                0 -8px 0 #006600 !important;
+        }
+
+        .footer h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .footer p, .footer li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .footer a {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .footer a:hover {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Social Links */
+        .social-links a {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            transition: all 0.1s ease !important;
+            box-shadow: 0 2px 0 #008800 !important;
+        }
+
+        .social-links a:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 0 0 0 #cc0000 !important;
+        }
+
+        /* Pixel Art Form Elements */
+        input, textarea, select {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            padding: 8px 12px !important;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            border-color: #ff0000 !important;
+            box-shadow: 0 0 0 2px #cc0000 !important;
+        }
+
+        /* Pixel Art Scrollbar */
+        ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+            border: 2px solid #00ff00;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border: 2px solid #008800;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0000;
+            border-color: #cc0000;
+        }
+
+        /* Additional Theme Elements */
+        .hero-container, .hero-content, .hero-image {
+            background: transparent !important;
+        }
+
+        .hero-title, .hero-subtitle {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .highlight {
+            color: #ff0000 !important;
+            text-shadow: 2px 2px 0px #cc0000 !important;
+        }
+
+        .container {
+            background: transparent !important;
+        }
+
+        /* About Section Pixel Art Theme */
+        .about {
+            background: linear-gradient(135deg, #000000 0%, #001100 25%, #002200 50%, #001100 75%, #000000 100%) !important;
+            border: 4px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 0 0 2px #008800,
+                0 8px 0 #008800,
+                0 16px 0 #006600 !important;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #ff0000, #00ff00);
+            background-size: 20px 20px;
+            z-index: -1;
+            animation: pixelBorder 2s linear infinite;
+        }
+
+        @keyframes pixelBorder {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 20px; }
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Ensure About page title is visible */
+        .about .section-title,
+        .about h2.section-title,
+        .about-text h2.section-title {
+            color: #00ff00 !important;
+            text-shadow: 
+                3px 3px 0px #008800,
+                6px 6px 0px #006600 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            font-size: 1.5rem !important;
+            font-weight: bold !important;
+            margin: 20px auto !important;
+            padding: 20px 0 !important;
+            text-align: center !important;
+            width: 100% !important;
+            background: rgba(0, 0, 0, 0.8) !important;
+            border: 3px solid #00ff00 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            line-height: 1.4 !important;
+            position: relative !important;
+            z-index: 10 !important;
+        }
+
+        .about-text p {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            font-size: 0.9rem !important;
+            text-align: justify !important;
+            text-justify: inter-word !important;
+            line-height: 1.8 !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+
+        .feature {
+            background: #000000 !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+            transition: all 0.1s ease !important;
+            padding: 20px !important;
+            margin-bottom: 20px !important;
+        }
+
+        .feature:hover {
+            transform: translateY(-4px) !important;
+            border-color: #ff0000 !important;
+            box-shadow: 
+                0 8px 0 #cc0000,
+                0 12px 0 #aa0000 !important;
+        }
+
+        .feature h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+            font-family: 'Press Start 2P', monospace !important;
+        }
+
+        .feature p {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            font-size: 0.8rem !important;
+            text-align: justify !important;
+            text-justify: inter-word !important;
+            line-height: 1.6 !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+
+        .feature i {
+            color: #ff0000 !important;
+            text-shadow: 2px 2px 0px #cc0000 !important;
+        }
+
+        .stat {
+            background: #000000 !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .stat:hover {
+            transform: translateY(-4px) !important;
+            border-color: #ff0000 !important;
+            box-shadow: 
+                0 8px 0 #cc0000,
+                0 12px 0 #aa0000 !important;
+        }
+
+        .stat-number {
+            color: #ff0000 !important;
+            text-shadow: 2px 2px 0px #cc0000 !important;
+            font-family: 'Press Start 2P', monospace !important;
+        }
+
+        .stat-label {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            font-family: 'Press Start 2P', monospace !important;
+        }
+
+        /* Responsive Pixel Art */
+        @media (max-width: 768px) {
+            .btn {
+                padding: 8px 16px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .nav-link {
+                padding: 6px 12px !important;
+                font-size: 0.7rem !important;
+            }
+            
+            .section-title {
+                font-size: 1.2rem !important;
+                padding: 0 10px !important;
+            }
+            
+            .about-text p {
+                font-size: 0.7rem !important;
+                line-height: 1.6 !important;
+                padding: 0 10px !important;
+            }
+            
+            .feature p {
+                font-size: 0.6rem !important;
+                line-height: 1.4 !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1rem !important;
+                padding: 0 5px !important;
+            }
+            
+            .about-text p {
+                font-size: 0.6rem !important;
+                line-height: 1.5 !important;
+                padding: 0 5px !important;
+            }
+            
+            .feature p {
+                font-size: 0.5rem !important;
+                line-height: 1.3 !important;
+            }
+        }
+
+        /* ===== LOADING SCREEN STYLES ===== */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-screen.hidden {
+            display: none;
+        }
+
+        .loading-gif {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            filter: drop-shadow(0 0 20px #00ff00);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .loading-text {
+            color: #00ff00;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 0px #008800;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: loadingPulse 1.5s ease-in-out infinite;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 40px;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        @keyframes loadingPulse {
+            0%, 100% { 
+                opacity: 1;
+                text-shadow: 2px 2px 0px #008800, 0 0 10px #00ff00;
+            }
+            50% { 
+                opacity: 0.7;
+                text-shadow: 2px 2px 0px #008800, 0 0 20px #00ff00;
+            }
+        }
+
+        .loading-dots {
+            color: #ff0000;
+            animation: loadingDots 1s infinite;
+        }
+
+        @keyframes loadingDots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: loadingDots 1s infinite;
+        }
+
+        /* Page transition overlay */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            z-index: 99998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .page-transition.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <img src="warhammer-stance.gif" alt="Loading..." class="loading-gif">
+        <div class="loading-text">LOADING<span class="loading-dots"></span></div>
+    </div>
+
+    <!-- Page Transition Overlay -->
+    <div class="page-transition" id="pageTransition"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Space Marine Helmet -->
+    <div class="space-marine-helmet" id="spaceMarineHelmet">
+        <img src="20.gif" alt="Space Marine Helmet" />
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Hardware Heaven</h2>
+                    <p>We are passionate about bringing you the latest and greatest in graphics technology. Our team of experts carefully selects and tests every GPU to ensure you get the best performance for your needs.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h3>Fast Shipping</h3>
+                            <p>Free shipping on all orders over $500</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Warranty</h3>
+                            <p>3-year warranty on all graphics cards</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <h3>24/7 Support</h3>
+                            <p>Expert support whenever you need it</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="stats-container">
+                        <div class="stat">
+                            <span class="stat-number" data-target="10000">0</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="500">0</span>
+                            <span class="stat-label">Products Sold</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="99">0</span>
+                            <span class="stat-label">Satisfaction %</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script src="https://genieai.zlz.me/widget/loader.js" data-key="gw_193cb7310ac1f204380bfcc07ebb7098" data-api-url="https://genieai.zlz.me"></script>
+
+<script>
+    // Loading Screen Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        const pageTransition = document.getElementById('pageTransition');
+        
+        // Show loading screen on page load
+        function showLoadingScreen() {
+            loadingScreen.style.display = 'flex';
+            loadingScreen.classList.remove('fade-out', 'hidden');
+            loadingScreen.style.opacity = '1';
+        }
+        
+        // Hide loading screen with fade out
+        function hideLoadingScreen() {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 500);
+        }
+        
+        // Show page transition overlay
+        function showPageTransition() {
+            pageTransition.classList.add('active');
+        }
+        
+        // Hide page transition overlay
+        function hidePageTransition() {
+            pageTransition.classList.remove('active');
+        }
+        
+        // Initial page load - show loading screen for 3 seconds
+        setTimeout(() => {
+            hideLoadingScreen();
+        }, 3000);
+        
+        // Handle navigation links for page transitions
+        const navLinks = document.querySelectorAll('a[href$=".html"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Don't show transition for same page
+                if (this.href === window.location.href) {
+                    return;
+                }
+                
+                e.preventDefault();
+                const targetUrl = this.href;
+                
+                // Show transition overlay
+                showPageTransition();
+                
+                // Show loading screen after a brief delay
+                setTimeout(() => {
+                    showLoadingScreen();
+                    
+                    // Navigate to new page after loading screen is visible
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 100);
+                }, 300);
+            });
+        });
+        
+        // Handle browser back/forward buttons
+        window.addEventListener('beforeunload', function() {
+            showPageTransition();
+        });
+        
+        // Handle page visibility changes (tab switching)
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // Page is hidden, could show transition
+            } else {
+                // Page is visible again
+                hidePageTransition();
+            }
+        });
+        
+        // Preload the GIF for smoother experience
+        const gif = new Image();
+        gif.src = 'warhammer-stance.gif';
+        
+        // Add loading states to buttons
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.href && this.href.includes('.html')) {
+                    // This is a navigation button, show transition
+                    showPageTransition();
+                }
+            });
+        });
+    });
+    
+    // Global function to show loading screen (can be called from other scripts)
+    window.showLoadingScreen = function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.style.display = 'flex';
+        loadingScreen.classList.remove('fade-out', 'hidden');
+        loadingScreen.style.opacity = '1';
+    };
+    
+    // Global function to hide loading screen
+    window.hideLoadingScreen = function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.classList.add('fade-out');
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+        }, 500);
+    };
+</script>
+</body>
+</html>
+</html>

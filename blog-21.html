@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chosen Undead: Building Your First Gaming Rig - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">The Chosen Undead: Building Your First Gaming Rig</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">🔥</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <h2>Praise the Sun: A Beginner's Guide to PC Building</h2>
+                    <p>In the age of fire, when the world was young and the first flame flickered to life, the Chosen Undead embarked on a journey that would test their resolve and forge them into legends. Like the Chosen Undead who must learn to navigate the treacherous lands of Lordran, building your first gaming PC is a journey of discovery, challenge, and ultimately, triumph. This guide will serve as your bonfire in the darkness, illuminating the path to building your first gaming rig and helping you kindle the flame of knowledge that will guide you through the trials ahead.</p>
+                    
+                    <h3>The First Flame: Understanding the Basics</h3>
+                    <p><strong>The Age of Fire Begins:</strong></p>
+                    <p>Just as the first flame brought light to the world and gave birth to the Lords, understanding the fundamental components of a PC is the first step in your journey. Each component serves a specific purpose, and like the Lords who each possessed a unique soul, each part of your system must work in harmony to achieve greatness.</p>
+                    
+                    <ul>
+                        <li><strong>The CPU (Central Processing Unit):</strong> The brain of your system, like Gwyn's soul</li>
+                        <li><strong>The GPU (Graphics Processing Unit):</strong> The power that renders your games, like the power of the Lords</li>
+                        <li><strong>RAM (Random Access Memory):</strong> The temporary memory that stores active data</li>
+                        <li><strong>Storage:</strong> Where your games and files are permanently stored</li>
+                        <li><strong>The Motherboard:</strong> The foundation that connects all components</li>
+                        <li><strong>The Power Supply:</strong> The life force that powers your entire system</li>
+                        <li><strong>The Case:</strong> The protective shell that houses your components</li>
+                    </ul>
+                    
+                    <h3>The Chosen Undead's First Build: A Beginner's Rig</h3>
+                    <p><strong>Specifications for the Newly Awakened:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 5 5600 or Intel Core i5-12400F (The Awakened Soul)</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4060 or AMD RX 7600 (The First Flame)</li>
+                        <li><strong>RAM:</strong> 16GB DDR4-3200 (The Memory of Ages)</li>
+                        <li><strong>Storage:</strong> 1TB NVMe SSD (The Bonfire's Light)</li>
+                        <li><strong>Motherboard:</strong> ASUS TUF Gaming B550M or MSI B660M Pro (The Foundation)</li>
+                        <li><strong>PSU:</strong> 650W 80+ Bronze (The Power of the Lords)</li>
+                        <li><strong>Case:</strong> Fractal Design Core 1000 or Cooler Master MasterBox Q300L (The Sanctuary)</li>
+                    </ul>
+                    
+                    <h3>The Hollow's Build: Ultra-Budget for the Desperate</h3>
+                    <p><strong>Specifications for Those Who Have Lost Their Way:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 3 4100 or Intel Core i3-10100F</li>
+                        <li><strong>GPU:</strong> NVIDIA GTX 1660 Super or AMD RX 6500 XT</li>
+                        <li><strong>RAM:</strong> 8GB DDR4-3200</li>
+                        <li><strong>Storage:</strong> 500GB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS Prime A320M-K or MSI H510M Pro</li>
+                        <li><strong>PSU:</strong> 500W 80+ Bronze</li>
+                        <li><strong>Case:</strong> Fractal Design Core 1000 or Cooler Master MasterBox Q300L</li>
+                    </ul>
+                    
+                    <h3>The Sacred Components: Blessed by the First Flame</h3>
+                    <p><strong>The Awakened Soul (CPU):</strong></p>
+                    <p>Like the soul of a Lord that grants immense power, your CPU is the heart of your system. The AMD Ryzen 5 5600 and Intel Core i5-12400F offer excellent performance for gaming without breaking the bank. They are the perfect starting point for any Chosen Undead beginning their journey.</p>
+                    
+                    <p><strong>The First Flame (GPU):</strong></p>
+                    <p>The graphics card is your primary weapon in the digital realm, capable of rendering the most beautiful worlds and epic battles. The NVIDIA RTX 4060 and AMD RX 7600 deliver excellent 1080p gaming performance, allowing you to experience games in all their glory.</p>
+                    
+                    <p><strong>The Memory of Ages (RAM):</strong></p>
+                    <p>Memory is the knowledge of the ages, storing all the data your system needs to function. 16GB of DDR4-3200 provides enough memory for modern gaming, while 8GB is the minimum for basic functionality.</p>
+                    
+                    <h3>The Way of the Chosen Undead: Building Your Rig</h3>
+                    <p><strong>Preparing for the Journey (Gathering Your Equipment):</strong></p>
+                    <ul>
+                        <li><strong>Anti-Static Wrist Strap:</strong> Protect your components from static discharge</li>
+                        <li><strong>Phillips Head Screwdriver:</strong> For securing components</li>
+                        <li><strong>Thermal Paste:</strong> For optimal CPU cooling</li>
+                        <li><strong>Cable Ties:</strong> For organizing cables</li>
+                        <li><strong>Patience and Determination:</strong> The most important tools of all</li>
+                    </ul>
+                    
+                    <p><strong>The Sacred Rites of Assembly (Building Your System):</strong></p>
+                    <ul>
+                        <li><strong>First Rite:</strong> Install CPU and RAM on the motherboard</li>
+                        <li><strong>Second Rite:</strong> Mount the motherboard in the case</li>
+                        <li><strong>Third Rite:</strong> Install the power supply</li>
+                        <li><strong>Fourth Rite:</strong> Install storage drives</li>
+                        <li><strong>Fifth Rite:</strong> Install the graphics card</li>
+                        <li><strong>Final Rite:</strong> Connect all cables and perform the first boot</li>
+                    </ul>
+                    
+                    <h3>The Bonfire's Light: Troubleshooting and Maintenance</h3>
+                    <p><strong>Common Trials (The Challenges You May Face):</strong></p>
+                    <ul>
+                        <li><strong>System Won't Boot:</strong> Check all connections and power supply</li>
+                        <li><strong>No Display:</strong> Verify graphics card installation and monitor connection</li>
+                        <li><strong>Overheating:</strong> Check CPU cooler installation and thermal paste</li>
+                        <li><strong>Random Crashes:</strong> Test RAM with MemTest86</li>
+                    </ul>
+                    
+                    <p><strong>The Path of Maintenance (Keeping Your System Healthy):</strong></p>
+                    <ul>
+                        <li><strong>Regular Cleaning:</strong> Keep your system free of dust and debris</li>
+                        <li><strong>Driver Updates:</strong> Keep all drivers updated for optimal performance</li>
+                        <li><strong>System Monitoring:</strong> Monitor temperatures and performance</li>
+                        <li><strong>Backup Important Data:</strong> Protect your save files and important documents</li>
+                    </ul>
+                    
+                    <h3>The Way of the Sun: Gaming and Performance</h3>
+                    <p><strong>Gaming Performance (The Power of the First Flame):</strong></p>
+                    <ul>
+                        <li><strong>1080p Gaming:</strong> Excellent performance at 1080p resolution</li>
+                        <li><strong>60+ FPS:</strong> Smooth gameplay in most modern games</li>
+                        <li><strong>Ray Tracing:</strong> Basic ray tracing support with RTX cards</li>
+                        <li><strong>Future-Proofing:</strong> Built to handle games for years to come</li>
+                    </ul>
+                    
+                    <p><strong>Optimization (The Art of the Chosen Undead):</strong></p>
+                    <ul>
+                        <li><strong>Game Settings:</strong> Adjust graphics settings for optimal performance</li>
+                        <li><strong>System Optimization:</strong> Use tools like MSI Afterburner for GPU tuning</li>
+                        <li><strong>Background Processes:</strong> Close unnecessary programs while gaming</li>
+                        <li><strong>Regular Maintenance:</strong> Keep your system clean and updated</li>
+                    </ul>
+                    
+                    <h3>The Community of the Sun: Finding Help and Support</h3>
+                    <p><strong>The Warriors of Sunlight (Online Communities):</strong></p>
+                    <ul>
+                        <li><strong>Reddit:</strong> r/buildapc and r/pcmasterrace for advice and support</li>
+                        <li><strong>Discord Servers:</strong> Join PC building communities for real-time help</li>
+                        <li><strong>YouTube Channels:</strong> Watch tutorials and build guides</li>
+                        <li><strong>Forums:</strong> Participate in discussions and ask questions</li>
+                    </ul>
+                    
+                    <h3>Conclusion: The Journey Begins</h3>
+                    <p>Remember, Chosen Undead, that building your first gaming PC is not merely a technical task, but a journey of self-discovery and growth. Like the Chosen Undead who must learn to navigate the treacherous lands of Lordran, you will face challenges and setbacks, but with determination and the guidance of the community, you will emerge victorious.</p>
+                    
+                    <p>May the first flame guide your path, and may your system serve you well in the eternal quest for gaming excellence. Praise the sun, and may your frame rates be high and your temperatures low. The journey begins now, Chosen Undead. Prepare yourself for the trials ahead, for the age of fire awaits!</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

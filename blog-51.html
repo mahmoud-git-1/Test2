@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner PC Building Guide: Your First Build - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">🛠️ Beginner PC Building Guide: Your First Build</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">🛠️</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <p>Building your first PC can be an exciting yet intimidating experience. With the right guidance, tools, and patience, anyone can successfully assemble a computer from individual components. This comprehensive beginner's guide will walk you through every step of the process, from planning and component selection to assembly and first boot.</p>
+
+                    <h2>📋 Planning Your Build</h2>
+                    <p><strong>Define Your Goals:</strong></p>
+                    <ul>
+                        <li><strong>Primary Use:</strong> Gaming, productivity, content creation, or general use</li>
+                        <li><strong>Performance Requirements:</strong> What games or applications will you run?</li>
+                        <li><strong>Budget Range:</strong> Set a realistic budget and stick to it</li>
+                        <li><strong>Future Upgrades:</strong> Plan for potential component upgrades</li>
+                        <li><strong>Form Factor:</strong> Full tower, mid tower, or compact build</li>
+                    </ul>
+
+                    <h2>💰 Budget Planning</h2>
+                    <p><strong>Budget Allocation Guidelines:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> 25-30% of total budget</li>
+                        <li><strong>GPU:</strong> 30-40% of total budget (for gaming builds)</li>
+                        <li><strong>Motherboard:</strong> 10-15% of total budget</li>
+                        <li><strong>RAM:</strong> 8-12% of total budget</li>
+                        <li><strong>Storage:</strong> 8-12% of total budget</li>
+                        <li><strong>Power Supply:</strong> 8-10% of total budget</li>
+                        <li><strong>Case:</strong> 5-8% of total budget</li>
+                        <li><strong>Cooling:</strong> 3-5% of total budget</li>
+                    </ul>
+
+                    <h2>🔧 Essential Tools</h2>
+                    <p><strong>Required Tools:</strong></p>
+                    <ul>
+                        <li><strong>Phillips Screwdriver:</strong> #2 size for most PC screws</li>
+                        <li><strong>Anti-static Wrist Strap:</strong> Protects components from static electricity</li>
+                        <li><strong>Zip Ties:</strong> For cable management</li>
+                        <li><strong>Flashlight:</strong> For better visibility in tight spaces</li>
+                        <li><strong>Thermal Paste:</strong> Usually included with CPU cooler</li>
+                    </ul>
+
+                    <h2>📦 Component Selection</h2>
+                    <p><strong>CPU (Processor):</strong></p>
+                    <ul>
+                        <li><strong>Intel:</strong> Core i3, i5, or i7 for different performance levels</li>
+                        <li><strong>AMD:</strong> Ryzen 3, 5, or 7 series</li>
+                        <li><strong>Considerations:</strong> Core count, clock speed, integrated graphics</li>
+                    </ul>
+
+                    <p><strong>Motherboard:</strong></p>
+                    <ul>
+                        <li><strong>Socket Compatibility:</strong> Must match your CPU socket</li>
+                        <li><strong>Form Factor:</strong> ATX, micro-ATX, or mini-ITX</li>
+                        <li><strong>Features:</strong> USB ports, RAM slots, expansion slots</li>
+                        <li><strong>Connectivity:</strong> Wi-Fi, Bluetooth, Ethernet</li>
+                    </ul>
+
+                    <p><strong>RAM (Memory):</strong></p>
+                    <ul>
+                        <li><strong>Capacity:</strong> 8GB minimum, 16GB recommended</li>
+                        <li><strong>Speed:</strong> DDR4-3200 or DDR5-4800+</li>
+                        <li><strong>Configuration:</strong> 2x8GB or 2x16GB for dual-channel</li>
+                    </ul>
+
+                    <p><strong>Storage:</strong></p>
+                    <ul>
+                        <li><strong>SSD:</strong> 500GB-1TB for operating system and programs</li>
+                        <li><strong>HDD:</strong> 1-2TB for additional storage (optional)</li>
+                        <li><strong>Interface:</strong> SATA or NVMe M.2</li>
+                    </ul>
+
+                    <p><strong>Graphics Card (GPU):</strong></p>
+                    <ul>
+                        <li><strong>Gaming:</strong> NVIDIA RTX 3060/4060 or AMD RX 6600/7600</li>
+                        <li><strong>Budget:</strong> GTX 1660 Super or RX 6500 XT</li>
+                        <li><strong>Power Requirements:</strong> Check PSU wattage requirements</li>
+                    </ul>
+
+                    <p><strong>Power Supply (PSU):</strong></p>
+                    <ul>
+                        <li><strong>Wattage:</strong> 550W-750W for most builds</li>
+                        <li><strong>Efficiency:</strong> 80+ Bronze, Silver, or Gold rating</li>
+                        <li><strong>Modularity:</strong> Fully modular for easier cable management</li>
+                    </ul>
+
+                    <p><strong>Case:</strong></p>
+                    <ul>
+                        <li><strong>Size:</strong> Must accommodate motherboard form factor</li>
+                        <li><strong>Airflow:</strong> Good ventilation and fan mounts</li>
+                        <li><strong>Cable Management:</strong> Routing holes and tie-down points</li>
+                        <li><strong>Features:</strong> USB ports, RGB lighting, tempered glass</li>
+                    </ul>
+
+                    <h2>🔨 Assembly Process</h2>
+                    <p><strong>Step 1: Prepare Your Workspace</strong></p>
+                    <ul>
+                        <li>Clear, well-lit area with plenty of space</li>
+                        <li>Anti-static mat or work on non-carpeted surface</li>
+                        <li>Organize components and tools</li>
+                        <li>Read all manuals before starting</li>
+                    </ul>
+
+                    <p><strong>Step 2: Install CPU</strong></p>
+                    <ul>
+                        <li>Lift CPU socket lever carefully</li>
+                        <li>Align CPU with socket (match triangle markers)</li>
+                        <li>Lower CPU gently - no force required</li>
+                        <li>Close socket lever to secure CPU</li>
+                    </ul>
+
+                    <p><strong>Step 3: Install RAM</strong></p>
+                    <ul>
+                        <li>Open RAM slot clips</li>
+                        <li>Align RAM with slot (check notch position)</li>
+                        <li>Press down firmly until clips snap into place</li>
+                        <li>Install in slots 2 and 4 for dual-channel (if using 2 sticks)</li>
+                    </ul>
+
+                    <p><strong>Step 4: Install Storage</strong></p>
+                    <ul>
+                        <li><strong>M.2 SSD:</strong> Insert at angle, secure with screw</li>
+                        <li><strong>SATA SSD/HDD:</strong> Mount in drive bays, connect cables</li>
+                        <li>Connect SATA data and power cables</li>
+                    </ul>
+
+                    <p><strong>Step 5: Install Motherboard</strong></p>
+                    <ul>
+                        <li>Install I/O shield in case first</li>
+                        <li>Install standoffs in case (if not pre-installed)</li>
+                        <li>Lower motherboard carefully into case</li>
+                        <li>Secure with screws (don't overtighten)</li>
+                    </ul>
+
+                    <p><strong>Step 6: Install Power Supply</strong></p>
+                    <ul>
+                        <li>Mount PSU in case (fan facing down or up depending on case)</li>
+                        <li>Route cables through case to components</li>
+                        <li>Connect 24-pin motherboard power</li>
+                        <li>Connect 8-pin CPU power</li>
+                    </ul>
+
+                    <p><strong>Step 7: Install Graphics Card</strong></p>
+                    <ul>
+                        <li>Remove expansion slot covers</li>
+                        <li>Insert GPU into PCIe slot</li>
+                        <li>Secure with screws to case</li>
+                        <li>Connect PCIe power cables from PSU</li>
+                    </ul>
+
+                    <p><strong>Step 8: Cable Management</strong></p>
+                    <ul>
+                        <li>Route cables through case cutouts</li>
+                        <li>Use zip ties to secure cables</li>
+                        <li>Keep cables away from fans</li>
+                        <li>Connect front panel connectors (power, reset, LEDs)</li>
+                    </ul>
+
+                    <h2>🚀 First Boot and Setup</h2>
+                    <p><strong>Pre-Boot Checklist:</strong></p>
+                    <ul>
+                        <li>Double-check all connections</li>
+                        <li>Ensure no loose screws or tools in case</li>
+                        <li>Connect monitor, keyboard, and mouse</li>
+                        <li>Plug in power cable</li>
+                    </ul>
+
+                    <p><strong>BIOS Setup:</strong></p>
+                    <ul>
+                        <li>Enter BIOS (usually F2, F12, or Delete key)</li>
+                        <li>Check that all components are detected</li>
+                        <li>Set boot priority to your storage device</li>
+                        <li>Enable XMP/DOCP for RAM overclocking</li>
+                    </ul>
+
+                    <p><strong>Operating System Installation:</strong></p>
+                    <ul>
+                        <li>Create Windows installation media</li>
+                        <li>Boot from USB drive</li>
+                        <li>Follow installation wizard</li>
+                        <li>Install drivers for all components</li>
+                    </ul>
+
+                    <h2>⚠️ Common Beginner Mistakes</h2>
+                    <ul>
+                        <li><strong>Forgetting I/O Shield:</strong> Install before motherboard</li>
+                        <li><strong>Incorrect RAM Installation:</strong> Not fully seated in slots</li>
+                        <li><strong>Missing Power Connections:</strong> CPU and GPU power cables</li>
+                        <li><strong>Poor Cable Management:</strong> Blocking airflow</li>
+                        <li><strong>Overtightening Screws:</strong> Can damage components</li>
+                        <li><strong>Static Electricity:</strong> Always use anti-static precautions</li>
+                    </ul>
+
+                    <h2>🔧 Troubleshooting Tips</h2>
+                    <p><strong>System Won't Boot:</strong></p>
+                    <ul>
+                        <li>Check all power connections</li>
+                        <li>Verify RAM is properly seated</li>
+                        <li>Ensure CPU is correctly installed</li>
+                        <li>Check for loose cables</li>
+                    </ul>
+
+                    <p><strong>No Display:</strong></p>
+                    <ul>
+                        <li>Connect monitor to graphics card, not motherboard</li>
+                        <li>Check GPU power connections</li>
+                        <li>Try different display cables</li>
+                        <li>Test with integrated graphics if available</li>
+                    </ul>
+
+                    <h2>📚 Learning Resources</h2>
+                    <ul>
+                        <li><strong>YouTube Channels:</strong> Linus Tech Tips, Bitwit, Paul's Hardware</li>
+                        <li><strong>Forums:</strong> Reddit r/buildapc, Tom's Hardware</li>
+                        <li><strong>Compatibility Tools:</strong> PCPartPicker, Newegg's compatibility checker</li>
+                        <li><strong>Manuals:</strong> Always read component manuals</li>
+                    </ul>
+
+                    <p>Building your first PC is a rewarding experience that teaches valuable skills and gives you a deep understanding of how computers work. Take your time, be patient, and don't hesitate to ask for help from the community. Remember, every expert was once a beginner!</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

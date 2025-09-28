@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Space Marines: Elite Gaming Rigs of the Imperium - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        /* Pixel Art Base Styles */
+        * {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        body {
+            background: #000000 !important;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%),
+                linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%);
+            font-family: 'Press Start 2P', monospace !important;
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800;
+            line-height: 1.6;
+        }
+
+        /* Pixel Art Navigation */
+        .navbar {
+            background: #000000 !important;
+            border-bottom: 4px solid #00ff00 !important;
+            box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important;
+        }
+
+        .nav-container {
+            background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+        }
+
+        .nav-logo {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-logo i {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-link {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            border: 2px solid transparent !important;
+            padding: 8px 16px !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .nav-link:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #cc0000 !important;
+            box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important;
+        }
+
+        .nav-link.active {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #008800 !important;
+            box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important;
+        }
+
+        /* Pixel Art Blog Post Section */
+        .blog-post-section {
+            background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 4px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 0 0 2px #008800,
+                0 8px 0 #008800,
+                0 16px 0 #006600 !important;
+            position: relative;
+        }
+
+        .blog-post-content {
+            background: #000000 !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .blog-post-title {
+            color: #00ff00 !important;
+            text-shadow: 
+                3px 3px 0px #008800,
+                6px 6px 0px #006600,
+                9px 9px 0px #004400 !important;
+        }
+
+        .blog-post-meta {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body p {
+            text-align: justify !important;
+            text-justify: inter-word !important;
+        }
+
+        .blog-post-body h2, .blog-post-body h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .blog-post-body ul li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body strong {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Buttons */
+        .btn {
+            font-family: 'Press Start 2P', monospace !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            background: #000000 !important;
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            padding: 12px 24px !important;
+            transition: all 0.1s ease !important;
+            position: relative;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        .btn:active {
+            transform: translateY(4px) !important;
+            box-shadow: 
+                0 0 0 #cc0000,
+                0 0 0 #aa0000 !important;
+        }
+
+        .btn-secondary {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #008800 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn-secondary:hover {
+            background: #ff0000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        /* Pixel Art Footer */
+        .footer {
+            background: #000000 !important;
+            border-top: 4px solid #00ff00 !important;
+            box-shadow: 
+                0 -4px 0 #008800,
+                0 -8px 0 #006600 !important;
+        }
+
+        .footer h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .footer p, .footer li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .footer a {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .footer a:hover {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Social Links */
+        .social-links a {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            transition: all 0.1s ease !important;
+            box-shadow: 0 2px 0 #008800 !important;
+        }
+
+        .social-links a:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 0 0 0 #cc0000 !important;
+        }
+
+        /* Pixel Art Form Elements */
+        input, textarea, select {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            padding: 8px 12px !important;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            border-color: #ff0000 !important;
+            box-shadow: 0 0 0 2px #cc0000 !important;
+        }
+
+        /* Pixel Art Scrollbar */
+        ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+            border: 2px solid #00ff00;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border: 2px solid #008800;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0000;
+            border-color: #cc0000;
+        }
+
+        /* Responsive Pixel Art */
+        @media (max-width: 768px) {
+            .btn {
+                padding: 8px 16px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .nav-link {
+                padding: 6px 12px !important;
+                font-size: 0.7rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">The Space Marines: Elite Gaming Rigs of the Imperium</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">⚔️</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <h2>For the Emperor: Building the Ultimate Space Marine Gaming Rig</h2>
+                    <p>In the grim darkness of the far future, where there is only war, the Space Marines stand as the Emperor's finest warriors. Just as these superhuman soldiers are equipped with the most advanced weapons and armor, so too must your gaming rig be built with the finest components to achieve victory on the digital battlefield. This guide will help you construct a gaming system worthy of the Adeptus Astartes, capable of purging heretics at 4K resolution with the fury of a Bolter volley.</p>
+                    
+                    <h3>The Chapter Master's Rig: Ultimate Gaming Supremacy</h3>
+                    <p><strong>Specifications for the Emperor's Chosen:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i9-14900K or AMD Ryzen 9 7950X3D (The Primarch's Choice)</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4090 (The Emperor's Wrath)</li>
+                        <li><strong>RAM:</strong> 64GB DDR5-6000 (The Chapter's Memory)</li>
+                        <li><strong>Storage:</strong> 4TB NVMe SSD (The Sacred Vault)</li>
+                        <li><strong>Motherboard:</strong> ASUS ROG Maximus Z790 Hero or MSI MEG X670E Ace</li>
+                        <li><strong>PSU:</strong> 1200W 80+ Titanium (The Machine God's Blessing)</li>
+                        <li><strong>Case:</strong> Lian Li PC-O11 Dynamic XL (The Fortress Monastery)</li>
+                    </ul>
+                    
+                    <h3>The First Company Veteran's Rig: Elite Performance</h3>
+                    <p><strong>Specifications for the Battle-Brothers:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i7-14700K or AMD Ryzen 7 7800X3D</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4080 or AMD RX 7900 XTX</li>
+                        <li><strong>RAM:</strong> 32GB DDR5-5600</li>
+                        <li><strong>Storage:</strong> 2TB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS ROG Strix Z790-E or MSI MPG X670E Carbon</li>
+                        <li><strong>PSU:</strong> 1000W 80+ Platinum</li>
+                        <li><strong>Case:</strong> Fractal Design Torrent or Corsair 5000D Airflow</li>
+                    </ul>
+                    
+                    <h3>The Battle-Brother's Rig: Reliable Performance</h3>
+                    <p><strong>Specifications for the Line Marines:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i5-14600K or AMD Ryzen 5 7600X</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4070 or AMD RX 7800 XT</li>
+                        <li><strong>RAM:</strong> 32GB DDR5-5200</li>
+                        <li><strong>Storage:</strong> 1TB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS TUF Gaming Z790-Plus or MSI B650 Tomahawk</li>
+                        <li><strong>PSU:</strong> 850W 80+ Gold</li>
+                        <li><strong>Case:</strong> Fractal Design Meshify C or NZXT H7 Flow</li>
+                    </ul>
+                    
+                    <h3>The Scout's Rig: Stealth and Efficiency</h3>
+                    <p><strong>Specifications for the Neophytes:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i5-13400F or AMD Ryzen 5 7600</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4060 Ti or AMD RX 7700 XT</li>
+                        <li><strong>RAM:</strong> 16GB DDR5-4800</li>
+                        <li><strong>Storage:</strong> 1TB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS Prime B760M-A or MSI B650M Pro</li>
+                        <li><strong>PSU:</strong> 750W 80+ Gold</li>
+                        <li><strong>Case:</strong> Fractal Design Core 1000 or Cooler Master MasterBox Q300L</li>
+                    </ul>
+                    
+                    <h3>The Sacred Components: Blessed by the Machine God</h3>
+                    <p><strong>The Cogitator Core (CPU):</strong></p>
+                    <p>Like the enhanced physiology of a Space Marine, your CPU must be capable of processing vast amounts of data with superhuman speed. The Intel Core i9-14900K and AMD Ryzen 9 7950X3D represent the pinnacle of gaming performance, capable of handling the most demanding battles with the efficiency of a Primarch's strategic mind.</p>
+                    
+                    <p><strong>The Sacred Graphics Engine (GPU):</strong></p>
+                    <p>The graphics card is your Bolter, your primary weapon in the digital war. The NVIDIA RTX 4090 delivers the Emperor's Wrath with ray tracing capabilities that bring the grim darkness of the 41st millennium to life. For those seeking the path of the heretic, the AMD RX 7900 XTX offers excellent performance at a more reasonable price.</p>
+                    
+                    <p><strong>The Chapter's Memory (RAM):</strong></p>
+                    <p>Memory is the collective knowledge of your Chapter, storing the tactics and strategies needed for victory. DDR5-6000 provides the speed and bandwidth necessary for modern gaming, while 32GB ensures you can handle multiple applications without the shame of memory shortage.</p>
+                    
+                    <h3>The Sacred Armor: Cooling and Protection</h3>
+                    <p><strong>Air Cooling (The Standard Issue):</strong></p>
+                    <ul>
+                        <li><strong>Noctua NH-D15:</strong> The Emperor's chosen air cooler</li>
+                        <li><strong>be quiet! Dark Rock Pro 4:</strong> Silent and efficient</li>
+                        <li><strong>Cooler Master Hyper 212:</strong> Reliable and affordable</li>
+                    </ul>
+                    
+                    <p><strong>Liquid Cooling (The Terminator Armor):</strong></p>
+                    <ul>
+                        <li><strong>Corsair iCUE H150i Elite Capellix:</strong> RGB lighting for the faithful</li>
+                        <li><strong>NZXT Kraken X73:</strong> Clean aesthetics and performance</li>
+                        <li><strong>Arctic Liquid Freezer II 360:</strong> Excellent value and performance</li>
+                    </ul>
+                    
+                    <h3>The Sacred Weapons: Peripherals and Accessories</h3>
+                    <p><strong>Gaming Monitors (The Chapter's Eyes):</strong></p>
+                    <ul>
+                        <li><strong>4K 144Hz:</strong> For the Chapter Masters and Veterans</li>
+                        <li><strong>1440p 240Hz:</strong> For competitive gaming and esports</li>
+                        <li><strong>1080p 360Hz:</strong> For maximum frame rates and responsiveness</li>
+                    </ul>
+                    
+                    <p><strong>Gaming Keyboards (The Sacred Input):</strong></p>
+                    <ul>
+                        <li><strong>Mechanical Keyboards:</strong> Cherry MX switches for tactile feedback</li>
+                        <li><strong>RGB Lighting:</strong> For the glory of the Emperor</li>
+                        <li><strong>Programmable Keys:</strong> For complex battle commands</li>
+                    </ul>
+                    
+                    <p><strong>Gaming Mice (The Sacred Pointer):</strong></p>
+                    <ul>
+                        <li><strong>High DPI Sensors:</strong> For precise targeting</li>
+                        <li><strong>Programmable Buttons:</strong> For quick access to abilities</li>
+                        <li><strong>Ergonomic Design:</strong> For extended campaigns</li>
+                    </ul>
+                    
+                    <h3>The Sacred Assembly: Building Your Chapter</h3>
+                    <p><strong>Pre-Assembly Blessings:</strong></p>
+                    <ul>
+                        <li><strong>Static Discharge Rites:</strong> Ground yourself to prevent damage</li>
+                        <li><strong>Component Sanctification:</strong> Bless each component before installation</li>
+                        <li><strong>Workspace Consecration:</strong> Prepare a clean, well-lit assembly area</li>
+                    </ul>
+                    
+                    <p><strong>Assembly Sequence (The Sacred Rites):</strong></p>
+                    <ul>
+                        <li><strong>First Rite:</strong> Install CPU and RAM on the motherboard</li>
+                        <li><strong>Second Rite:</strong> Mount the motherboard in the case</li>
+                        <li><strong>Third Rite:</strong> Install the power supply and route cables</li>
+                        <li><strong>Fourth Rite:</strong> Install storage drives</li>
+                        <li><strong>Fifth Rite:</strong> Install the graphics card</li>
+                        <li><strong>Final Rite:</strong> Connect all cables and perform the first boot</li>
+                    </ul>
+                    
+                    <h3>The Sacred Optimization: Maximizing Performance</h3>
+                    <p><strong>BIOS Configuration:</strong></p>
+                    <ul>
+                        <li><strong>XMP/DOCP Profiles:</strong> Enable optimized memory settings</li>
+                        <li><strong>Resizable BAR:</strong> Enable for better GPU performance</li>
+                        <li><strong>Power Limits:</strong> Configure for optimal performance</li>
+                    </ul>
+                    
+                    <p><strong>Windows Optimization:</strong></p>
+                    <ul>
+                        <li><strong>Game Mode:</strong> Enable for gaming performance</li>
+                        <li><strong>High Performance Power Plan:</strong> For maximum performance</li>
+                        <li><strong>Background Apps:</strong> Disable unnecessary applications</li>
+                    </ul>
+                    
+                    <h3>The Sacred Maintenance: Keeping Your Chapter Battle-Ready</h3>
+                    <p><strong>Daily Rites:</strong></p>
+                    <ul>
+                        <li>Check system temperatures and performance</li>
+                        <li>Ensure all fans are operating properly</li>
+                        <li>Monitor for unusual noises or behaviors</li>
+                    </ul>
+                    
+                    <p><strong>Weekly Rites:</strong></p>
+                    <ul>
+                        <li>Run system updates and driver updates</li>
+                        <li>Clean temporary files and browser cache</li>
+                        <li>Check for security updates</li>
+                    </ul>
+                    
+                    <p><strong>Monthly Rites:</strong></p>
+                    <ul>
+                        <li>Physical cleaning of components and case</li>
+                        <li>Disk cleanup and defragmentation</li>
+                        <li>Backup important data</li>
+                    </ul>
+                    
+                    <h3>Conclusion: For the Emperor and the Omnissiah</h3>
+                    <p>Remember, faithful servant of the Imperium, that building a gaming rig is not merely a technical task, but a sacred duty. Each component must be chosen with care and installed with precision, for the machine spirit within each part must be appeased. By following these ancient rites and building your system with the devotion of a true Space Marine, you ensure that your gaming rig will serve you faithfully in the eternal war against lag and poor performance.</p>
+                    
+                    <p>May the Emperor protect your hardware, and may your frame rates be high and your temperatures low. For the Emperor! For the Omnissiah! Ave Imperator!</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

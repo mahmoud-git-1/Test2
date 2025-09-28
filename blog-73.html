@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Scourge of Beasts: The Plague That Consumed Yharnam - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">🐺 The Scourge of Beasts: The Plague That Consumed Yharnam</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">🐺</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <p>The night air in Yharnam was thick with the scent of blood and fear. What had once been a thriving city of scholars and healers had become a nightmare realm where the line between human and beast had been irrevocably blurred. The Scourge of Beasts had consumed Yharnam, transforming its citizens into monstrous creatures driven by an insatiable hunger for blood and violence. This is the story of how a city fell to the very cure that was meant to save it.</p>
+
+                    <h2>🩸 The First Signs</h2>
+                    <p>The transformation began subtly, almost imperceptibly. Those who had received the healing blood from the Healing Church started to exhibit strange behaviors. They spoke of vivid dreams filled with howling and the taste of copper on their tongues. Their eyes began to change, taking on a yellowish hue that seemed to glow in the darkness. Some developed an unnatural sensitivity to light, while others found themselves drawn to the scent of blood like moths to a flame.</p>
+                    
+                    <p>At first, these changes were dismissed as side effects of the miraculous healing process. The Healing Church assured the people that these were temporary symptoms that would pass as their bodies adjusted to the blessed blood. But as the weeks turned into months, the symptoms only grew worse. The dreams became nightmares, the sensitivity to light became a burning pain, and the attraction to blood became an all-consuming obsession.</p>
+
+                    <h2>🐺 The Transformation Begins</h2>
+                    <p>The first documented case of full transformation occurred in the Central Yharnam district, where a man named Heinrich had been one of the first to receive the healing blood. His family reported that he had locked himself in his bedroom for three days, refusing to eat or drink anything but raw meat. When they finally broke down the door, they found not Heinrich, but a creature that was only vaguely human in shape.</p>
+                    
+                    <p>His body had grown larger and more muscular, covered in coarse fur that was matted with blood. His face had elongated into a snout, and his teeth had become sharp fangs. His hands had transformed into claws, and his eyes burned with a feral intelligence that was both human and animal. When he spoke, his voice was a guttural growl that sent chills down the spines of all who heard it.</p>
+
+                    <h2>🌙 The Night of the Hunt</h2>
+                    <p>As more and more citizens began to transform, the city descended into chaos. The Healing Church, realizing the true nature of what they had unleashed, established the Hunter's Workshop to combat the growing threat. But by then, it was too late. The transformed citizens, now known as "beasts," had begun to hunt their former neighbors, driven by an insatiable hunger for blood.</p>
+                    
+                    <p>The first Night of the Hunt was a massacre. The beasts emerged from their hiding places as the sun set, their howls echoing through the streets of Yharnam. They moved with unnatural speed and strength, tearing through doors and windows to reach their prey. The city's guards were overwhelmed, and those who tried to fight back found themselves outmatched by creatures that felt no pain and showed no mercy.</p>
+
+                    <h2>🏥 The Healing Church's Response</h2>
+                    <p>Faced with the catastrophe they had created, the Healing Church was forced to take drastic measures. They established the Hunter's Workshop, recruiting the most skilled warriors and arming them with weapons designed specifically to combat the beasts. But even as they fought to contain the plague, they continued to administer the healing blood to new patients, unable to admit that their miracle cure was the source of the nightmare.</p>
+                    
+                    <p>The Church's hierarchy became increasingly secretive, with only the highest-ranking members knowing the true nature of the blood. They began to conduct experiments in secret, trying to find a way to reverse the transformation or at least control it. But their efforts only made things worse, creating new and more dangerous forms of beasts that were even harder to contain.</p>
+
+                    <h2>🧬 The Different Types of Beasts</h2>
+                    <p>As the plague spread, it became clear that not all transformations were the same. The healing blood affected different people in different ways, creating a variety of beast forms that ranged from the relatively humanoid to the completely monstrous.</p>
+                    
+                    <p><strong>The Cleric Beast:</strong> One of the first and most powerful transformations, the Cleric Beast was a massive creature that retained some human intelligence but was driven by pure rage. These beasts were often former members of the Healing Church who had been exposed to the blood for extended periods.</p>
+                    
+                    <p><strong>The Blood-Starved Beast:</strong> These creatures were driven by an insatiable hunger for blood, their bodies wasting away as they consumed everything they could find. They were among the most dangerous of the beasts, as they would attack anything that moved in their desperate search for sustenance.</p>
+                    
+                    <p><strong>The Scourge Beasts:</strong> The most common form of transformation, these were the citizens of Yharnam who had been exposed to the blood. They retained some human memories and emotions, making them both tragic and terrifying figures.</p>
+
+                    <h2>🌊 The Spread of the Plague</h2>
+                    <p>The beast plague spread through Yharnam like wildfire, carried not just by the healing blood but by the bites and scratches of the transformed beasts. Each new victim became a potential vector for the disease, and the city's population began to dwindle as more and more people either transformed or fled in terror.</p>
+                    
+                    <p>The plague was not limited to the living. The dead, too, could be affected, rising as undead beasts that were even more dangerous than their living counterparts. The city's graveyards became hunting grounds for these creatures, and the living learned to avoid them at all costs.</p>
+
+                    <h2>⚔️ The Hunter's War</h2>
+                    <p>The Hunters became Yharnam's last line of defense against the beast plague. Armed with weapons imbued with the power of the Great Ones and trained in the art of beast hunting, they waged a desperate war against the transformed citizens. But even they were not immune to the plague, and many Hunters found themselves becoming the very creatures they had sworn to destroy.</p>
+                    
+                    <p>The Hunter's Dream provided them with a sanctuary where they could rest and recover, but it also bound them to an endless cycle of hunting and death. Each night, they would emerge from the dream to hunt the beasts, only to die and return to the dream, their memories of the previous night's hunt fading like a bad dream.</p>
+
+                    <h2>🌙 The Blood Moon</h2>
+                    <p>As the plague reached its peak, the very fabric of reality began to unravel. The blood moon hung low in the sky, casting a crimson light over the city that seemed to drive the beasts into a frenzy. The boundary between the physical world and the realm of the Great Ones began to weaken, and the city became a nightmare realm where the laws of nature no longer applied.</p>
+                    
+                    <p>Under the blood moon, the beasts became more powerful and more numerous, their transformations accelerating and becoming more complete. The city's architecture began to shift and change, taking on organic forms that seemed to pulse with a life of their own. The very air became thick with the scent of blood and the sound of howling.</p>
+
+                    <h2>💀 The Fall of Yharnam</h2>
+                    <p>In the end, Yharnam fell not to an external enemy, but to the very cure that was meant to save it. The healing blood, which had promised to end all disease and suffering, had instead created a new form of existence that was neither human nor beast, but something in between. The city became a graveyard of the living, where the transformed citizens hunted each other in an endless cycle of violence and death.</p>
+                    
+                    <p>The Healing Church, once the city's greatest hope, became its greatest curse. Their miracle cure had transformed Yharnam into a nightmare realm where the line between human and beast had been forever erased. The city that had once been a beacon of healing and knowledge had become a monument to the dangers of playing with forces beyond human comprehension.</p>
+
+                    <h2>🌅 The Legacy of the Scourge</h2>
+                    <p>The Scourge of Beasts serves as a warning about the price of knowledge and the dangers of seeking power beyond human understanding. The healing blood, which had promised to elevate humanity to new heights, had instead dragged it down into the depths of bestial savagery. The city of Yharnam became a cautionary tale about the consequences of tampering with the natural order of things.</p>
+                    
+                    <p>But even in its fall, Yharnam taught valuable lessons about the nature of transformation and the price of evolution. The beasts were not mindless monsters, but beings caught between two worlds, struggling to maintain their humanity while being pulled toward something greater and more terrible. They were the failed experiments in the Great Ones' grand design, the proof that not all who seek to transcend their limitations are ready for what comes next.</p>
+
+                    <p><em>The Scourge of Beasts continues to haunt the streets of Yharnam, a reminder that sometimes the greatest threats come not from without, but from within. The city stands as a monument to the dangers of playing with forces beyond human comprehension, and a warning to all who would seek to transcend the natural order of things.</em></p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

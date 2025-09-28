@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Current Timeline: The 41st Millennium and Beyond - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">⏰ The Current Timeline: The 41st Millennium and Beyond</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">⏰</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <p>The 41st millennium represents a time of unprecedented crisis and change in the galaxy. The Imperium of Man, once the dominant power in the galaxy, now faces threats from all sides as the galaxy becomes increasingly dangerous and unstable. The return of Roboute Guilliman, the Primarch of the Ultramarines, has brought new hope to many, but the challenges facing the Imperium are greater than ever before. The galaxy is in a state of constant warfare, with countless conflicts raging across countless worlds. This is the dark future of the 41st millennium, where there is only war, and the survival of humanity hangs in the balance.</p>
+
+                    <h2>🌅 The End of the 41st Millennium</h2>
+                    <p><strong>The Gathering Storm:</strong></p>
+                    <p>The end of the 41st millennium was marked by a series of catastrophic events that would reshape the galaxy forever. The forces of Chaos launched massive invasions across the galaxy, while the Tyranids continued their relentless advance. The Necrons began awakening in unprecedented numbers, and the Orks launched massive WAAAGH!s that threatened entire sectors. The Imperium was stretched to its breaking point, with countless worlds falling to enemy forces and the Astronomican flickering as the Emperor's power waned. It was a time of darkness and despair, when many believed that the end of the Imperium was near.</p>
+
+                    <h2>👑 The Return of Roboute Guilliman</h2>
+                    <p><strong>The Primarch's Awakening:</strong></p>
+                    <p>The return of Roboute Guilliman marked a turning point in the history of the Imperium. The Primarch had been in stasis for over ten thousand years, preserved by the Eldar after his near-fatal wounding during the Horus Heresy. His awakening was made possible by the combined efforts of the Eldar and the Adeptus Mechanicus, who used ancient technology to heal his wounds and restore him to life. Guilliman's return brought new hope to the Imperium, as he immediately began reorganizing the Imperial forces and implementing new strategies to combat the growing threats. His leadership has been instrumental in holding the Imperium together during its darkest hour.</p>
+
+                    <h2>🔥 The Great Rift</h2>
+                    <p><strong>The Cicatrix Maledictum:</strong></p>
+                    <p>The Great Rift, also known as the Cicatrix Maledictum, is a massive Warp storm that has split the galaxy in half. This catastrophic event was caused by the combined psychic energies of countless Chaos rituals and the weakening of the Emperor's power. The Great Rift has made travel between the two halves of the galaxy extremely dangerous, with many worlds becoming isolated and cut off from Imperial support. The forces of Chaos have used the Great Rift to launch massive invasions, while the Imperium struggles to maintain communication and supply lines across the divided galaxy. The Great Rift represents one of the greatest challenges facing the Imperium in the 41st millennium.</p>
+
+                    <h2>⚔️ The Indomitus Crusade</h2>
+                    <p><strong>Guilliman's Great Campaign:</strong></p>
+                    <p>The Indomitus Crusade is the massive military campaign launched by Roboute Guilliman to reclaim the Imperium's lost territories and restore order to the galaxy. This crusade involves millions of Space Marines, Imperial Guard regiments, and other Imperial forces, all working together under Guilliman's command. The Indomitus Crusade has achieved significant victories, reclaiming many worlds that had been lost to Chaos and other enemies. However, the crusade is far from complete, and the Imperium continues to face massive challenges in its efforts to restore order to the galaxy.</p>
+
+                    <h2>🛡️ The Primaris Space Marines</h2>
+                    <p><strong>The New Generation:</strong></p>
+                    <p>The Primaris Space Marines represent a new generation of superhuman warriors, created using advanced genetic technology developed by the Adeptus Mechanicus. These new Marines are larger, stronger, and more resilient than their predecessors, and they are equipped with advanced weapons and armor. The Primaris Marines have been deployed throughout the galaxy as part of the Indomitus Crusade, and they have proven to be incredibly effective in combat. However, their introduction has also caused tension within the Space Marine Chapters, as some see them as a threat to traditional ways of warfare and organization.</p>
+
+                    <h2>🌌 The Current State of the Galaxy</h2>
+                    <p><strong>A Galaxy at War:</strong></p>
+                    <p>The galaxy in the 41st millennium is a place of constant warfare and conflict. The Imperium continues to fight against the forces of Chaos, while also defending against alien threats like the Tyranids, Orks, and Necrons. The Great Rift has made communication and travel extremely difficult, with many worlds becoming isolated and cut off from Imperial support. The return of Roboute Guilliman has brought new hope and organization to the Imperium, but the challenges facing humanity are greater than ever before. The galaxy is in a state of flux, with the balance of power constantly shifting as different factions struggle for dominance.</p>
+
+                    <h2>🔥 The Forces of Chaos</h2>
+                    <p><strong>The Eternal Threat:</strong></p>
+                    <p>The forces of Chaos remain one of the greatest threats to the Imperium in the 41st millennium. The Great Rift has made it easier for Chaos forces to invade the material universe, and they have launched massive campaigns across the galaxy. The Chaos Space Marines continue to serve their dark masters, while daemons manifest in reality with increasing frequency. The Chaos Gods themselves are more active than ever before, with their influence spreading across the galaxy. The war against Chaos is eternal and unending, requiring constant vigilance and sacrifice from the forces of the Imperium.</p>
+
+                    <h2>🦎 The Tyranid Threat</h2>
+                    <p><strong>The Great Devourer Advances:</strong></p>
+                    <p>The Tyranids continue to advance toward the galaxy, consuming everything in their path. Multiple Hive Fleets have been detected, each one larger and more dangerous than the last. The Tyranids have already consumed countless worlds, and they show no signs of stopping. The Hive Mind continues to adapt and evolve, developing new bioforms to counter any threat it encounters. The Tyranids represent an existential threat to all life in the galaxy, and the Imperium must constantly fight to prevent their advance. The war against the Tyranids is one of the defining conflicts of the 41st millennium.</p>
+
+                    <h2>💀 The Awakening Necrons</h2>
+                    <strong>The Ancient Kings Return:</strong></p>
+                    <p>The Necrons are awakening in unprecedented numbers across the galaxy. These ancient robotic beings are reclaiming their lost territories and purging all organic life they encounter. The Necrons possess incredibly advanced technology, including weapons that can destroy stars and devices that can manipulate time itself. They are divided into various dynasties, each ruled by a powerful Overlord. The awakening of the Necrons represents a new threat to the galaxy, as they seek to reclaim their ancient empire and purge all organic life. The war against the Necrons is just beginning, and it promises to be one of the most devastating conflicts in galactic history.</p>
+
+                    <h2>🟢 The Ork Menace</h2>
+                    <p><strong>The Green Tide Rises:</strong></p>
+                    <p>The Orks continue to be a constant threat to the Imperium, launching massive WAAAGH!s that threaten entire sectors of space. The Great Rift has made it easier for Ork forces to spread across the galaxy, and they have taken advantage of the chaos to expand their territories. The Orks are driven by an insatiable desire for combat, and they see the current state of the galaxy as an opportunity for endless warfare. The Orks may be primitive compared to other threats, but their numbers and determination make them incredibly dangerous. The war against the Orks is eternal and unending, requiring constant military action to prevent their expansion.</p>
+
+                    <h2>🔵 The Expanding Tau Empire</h2>
+                    <p><strong>The Greater Good Spreads:</strong></p>
+                    <p>The Tau Empire continues to expand across the galaxy, conquering new worlds and integrating new species into their Greater Good. The Tau have taken advantage of the Imperium's weakened state to expand their territories, and they have already conquered several human worlds. The Tau's rapid technological advancement and expansionist policies make them a significant threat to the Imperium. While they may not be as numerous as other threats, their efficiency and organization make them incredibly dangerous. The war against the Tau Empire is ongoing, and it represents a new front in the Imperium's struggle for survival.</p>
+
+                    <h2>🌙 The Eldar's Struggle</h2>
+                    <p><strong>The Ancient Ones Fight On:</strong></p>
+                    <p>The Eldar continue to fight for their survival in the 41st millennium, using their advanced technology and psychic abilities to combat the forces of Chaos and other threats. The Craftworld Eldar maintain their strict paths to avoid corruption, while the Dark Eldar continue their raids from the Webway. The Harlequins work to prevent the destruction of the galaxy by Chaos, using their knowledge of the future to guide their actions. The Eldar are few in number, but their power and knowledge make them valuable allies in the fight against the forces of darkness. The Eldar's struggle for survival is ongoing, and their fate is closely tied to the fate of the galaxy itself.</p>
+
+                    <h2>🎯 The Future of the Galaxy</h2>
+                    <p><strong>Uncertain Times Ahead:</strong></p>
+                    <p>The future of the galaxy is uncertain, with countless threats and challenges facing all civilizations. The Imperium continues to fight for survival, but the challenges are greater than ever before. The return of Roboute Guilliman has brought new hope, but the war is far from over. The galaxy is in a state of constant flux, with the balance of power constantly shifting. The forces of Chaos, the Tyranids, the Necrons, and other threats continue to advance, while the Imperium struggles to hold the line. The future of the galaxy will be determined by the outcome of these countless conflicts, and the survival of humanity hangs in the balance.</p>
+
+                    <h2>🌟 The End Times</h2>
+                    <p><strong>The Final Battle Approaches:</strong></p>
+                    <p>Many believe that the galaxy is approaching its final battle, a climactic conflict that will determine the fate of all life. The forces of Chaos grow stronger, the Tyranids continue their advance, and the Necrons awaken in increasing numbers. The Imperium, while strengthened by Guilliman's return, faces challenges on all fronts. The Great Rift has divided the galaxy, making communication and coordination extremely difficult. The galaxy is in a state of crisis, and many believe that the end times are approaching. The final battle for the galaxy may be near, and the survival of humanity depends on the outcome of this ultimate conflict.</p>
+
+                    <p>The 41st millennium represents a time of unprecedented crisis and change in the galaxy. The Imperium of Man faces threats from all sides, while the galaxy itself has been divided by the Great Rift. The return of Roboute Guilliman has brought new hope and organization to the Imperium, but the challenges facing humanity are greater than ever before. The forces of Chaos, the Tyranids, the Necrons, and other threats continue to advance, while the Imperium struggles to hold the line. The galaxy is in a state of constant warfare, with countless conflicts raging across countless worlds. This is the dark future of the 41st millennium, where there is only war, and the survival of humanity hangs in the balance. The future of the galaxy is uncertain, but one thing is clear: the final battle for the galaxy is approaching, and the fate of all life will be determined by its outcome.</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

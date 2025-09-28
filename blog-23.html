@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Age of Dark: Budget Gaming and Creative Solutions - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">The Age of Dark: Budget Gaming and Creative Solutions</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">🌑</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <h2>Embrace the Dark: Building Gaming Rigs on a Budget</h2>
+                    <p>In the age of dark, when the first flame has faded and the world is shrouded in shadow, the Chosen Undead must learn to survive with limited resources and creative solutions. Like the Chosen Undead who must make do with whatever equipment they can find, building a gaming PC on a budget requires resourcefulness, creativity, and the wisdom to make the most of what you have. This guide will teach you the ways of the age of dark: how to build gaming systems that deliver excellent performance without breaking the bank, proving that even in the darkest times, greatness can still be achieved.</p>
+                    
+                    <h3>The Age of Dark Philosophy: "Wisdom Through Resourcefulness"</h3>
+                    <p><strong>The Path of Creative Solutions:</strong></p>
+                    <p>The age of dark teaches us that true power comes not from having the most expensive equipment, but from the wisdom to use what you have effectively. Every component must be chosen with care, every dollar must be spent wisely, and every system must be built to maximize performance per dollar spent. This philosophy applies perfectly to building budget gaming systems, where the pursuit of value requires creativity and careful planning.</p>
+                    
+                    <ul>
+                        <li><strong>Value Over Price:</strong> Focus on performance per dollar, not just low cost</li>
+                        <li><strong>Creative Solutions:</strong> Find innovative ways to achieve your goals</li>
+                        <li><strong>Future-Proofing:</strong> Build systems that can be upgraded over time</li>
+                        <li><strong>Community Support:</strong> Leverage the wisdom of the community</li>
+                    </ul>
+                    
+                    <h3>The Hollow's Rig: Ultra-Budget for the Desperate</h3>
+                    <p><strong>Specifications for Those Who Have Lost Their Way:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 3 4100 or Intel Core i3-10100F (The Fading Soul)</li>
+                        <li><strong>GPU:</strong> NVIDIA GTX 1660 Super or AMD RX 6500 XT (The Dim Flame)</li>
+                        <li><strong>RAM:</strong> 8GB DDR4-3200 (The Fading Memory)</li>
+                        <li><strong>Storage:</strong> 500GB NVMe SSD (The Dark Vault)</li>
+                        <li><strong>Motherboard:</strong> ASUS Prime A320M-K or MSI H510M Pro (The Crumbling Foundation)</li>
+                        <li><strong>PSU:</strong> 500W 80+ Bronze (The Fading Power)</li>
+                        <li><strong>Case:</strong> Fractal Design Core 1000 or Cooler Master MasterBox Q300L (The Dark Sanctuary)</li>
+                    </ul>
+                    
+                    <h3>The Undead's Rig: Balanced Budget Performance</h3>
+                    <p><strong>Specifications for the Cursed Warriors:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 5 5600 or Intel Core i5-12400F</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4060 or AMD RX 7600</li>
+                        <li><strong>RAM:</strong> 16GB DDR4-3200</li>
+                        <li><strong>Storage:</strong> 1TB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS TUF Gaming B550M or MSI B660M Pro</li>
+                        <li><strong>PSU:</strong> 650W 80+ Bronze</li>
+                        <li><strong>Case:</strong> Fractal Design Core 1000 or Cooler Master MasterBox Q300L</li>
+                    </ul>
+                    
+                    <h3>The Cursed's Rig: Mid-Range Budget Performance</h3>
+                    <p><strong>Specifications for the Cursed Warriors:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 5 7600 or Intel Core i5-13400F</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4070 or AMD RX 7700 XT</li>
+                        <li><strong>RAM:</strong> 16GB DDR5-5600</li>
+                        <li><strong>Storage:</strong> 1TB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS TUF Gaming B650M or MSI B760M Pro</li>
+                        <li><strong>PSU:</strong> 750W 80+ Gold</li>
+                        <li><strong>Case:</strong> Fractal Design Meshify C or NZXT H7 Flow</li>
+                    </ul>
+                    
+                    <h3>The Sacred Components: Blessed by the Age of Dark</h3>
+                    <p><strong>The Fading Soul (CPU):</strong></p>
+                    <p>Like the soul of a Hollow that still flickers with life, your CPU must be capable of processing data with the efficiency and wisdom of the age of dark. The AMD Ryzen 5 5600 and Intel Core i5-12400F offer excellent performance for gaming without the high cost of flagship processors, proving that greatness can be achieved even with limited resources.</p>
+                    
+                    <p><strong>The Dim Flame (GPU):</strong></p>
+                    <p>The graphics card is your primary weapon in the digital realm, capable of rendering games with the power of a fading flame. The NVIDIA RTX 4060 and AMD RX 7600 deliver excellent 1080p gaming performance, allowing you to experience games in all their glory without the high cost of flagship graphics cards.</p>
+                    
+                    <p><strong>The Fading Memory (RAM):</strong></p>
+                    <p>Memory is the knowledge of the age of dark, storing all the data your system needs to function. 16GB of DDR4-3200 provides enough memory for modern gaming, while 8GB is the minimum for basic functionality.</p>
+                    
+                    <h3>The Way of the Age of Dark: Building Your Budget Rig</h3>
+                    <p><strong>Preparing for the Journey (Gathering Your Equipment):</strong></p>
+                    <ul>
+                        <li><strong>Anti-Static Wrist Strap:</strong> Protect your components from static discharge</li>
+                        <li><strong>Phillips Head Screwdriver:</strong> For securing components</li>
+                        <li><strong>Thermal Paste:</strong> For optimal CPU cooling</li>
+                        <li><strong>Cable Ties:</strong> For organizing cables</li>
+                        <li><strong>Patience and Determination:</strong> The most important tools of all</li>
+                    </ul>
+                    
+                    <p><strong>The Sacred Rites of Assembly (Building Your System):</strong></p>
+                    <ul>
+                        <li><strong>First Rite:</strong> Install CPU and RAM on the motherboard</li>
+                        <li><strong>Second Rite:</strong> Mount the motherboard in the case</li>
+                        <li><strong>Third Rite:</strong> Install the power supply</li>
+                        <li><strong>Fourth Rite:</strong> Install storage drives</li>
+                        <li><strong>Fifth Rite:</strong> Install the graphics card</li>
+                        <li><strong>Final Rite:</strong> Connect all cables and perform the first boot</li>
+                    </ul>
+                    
+                    <h3>The Bonfire's Light: Troubleshooting and Maintenance</h3>
+                    <p><strong>Common Trials (The Challenges You May Face):</strong></p>
+                    <ul>
+                        <li><strong>System Won't Boot:</strong> Check all connections and power supply</li>
+                        <li><strong>No Display:</strong> Verify graphics card installation and monitor connection</li>
+                        <li><strong>Overheating:</strong> Check CPU cooler installation and thermal paste</li>
+                        <li><strong>Random Crashes:</strong> Test RAM with MemTest86</li>
+                    </ul>
+                    
+                    <p><strong>The Path of Maintenance (Keeping Your System Healthy):</strong></p>
+                    <ul>
+                        <li><strong>Regular Cleaning:</strong> Keep your system free of dust and debris</li>
+                        <li><strong>Driver Updates:</strong> Keep all drivers updated for optimal performance</li>
+                        <li><strong>System Monitoring:</strong> Monitor temperatures and performance</li>
+                        <li><strong>Backup Important Data:</strong> Protect your save files and important documents</li>
+                    </ul>
+                    
+                    <h3>The Way of the Dark: Gaming and Performance</h3>
+                    <p><strong>Gaming Performance (The Power of the Fading Flame):</strong></p>
+                    <ul>
+                        <li><strong>1080p Gaming:</strong> Excellent performance at 1080p resolution</li>
+                        <li><strong>60+ FPS:</strong> Smooth gameplay in most modern games</li>
+                        <li><strong>Ray Tracing:</strong> Basic ray tracing support with RTX cards</li>
+                        <li><strong>Future-Proofing:</strong> Built to handle games for years to come</li>
+                    </ul>
+                    
+                    <p><strong>Optimization (The Art of the Age of Dark):</strong></p>
+                    <ul>
+                        <li><strong>Game Settings:</strong> Adjust graphics settings for optimal performance</li>
+                        <li><strong>System Optimization:</strong> Use tools like MSI Afterburner for GPU tuning</li>
+                        <li><strong>Background Processes:</strong> Close unnecessary programs while gaming</li>
+                        <li><strong>Regular Maintenance:</strong> Keep your system clean and updated</li>
+                    </ul>
+                    
+                    <h3>The Community of the Dark: Finding Help and Support</h3>
+                    <p><strong>The Warriors of the Dark (Online Communities):</strong></p>
+                    <ul>
+                        <li><strong>Reddit:</strong> r/buildapc and r/pcmasterrace for advice and support</li>
+                        <li><strong>Discord Servers:</strong> Join PC building communities for real-time help</li>
+                        <li><strong>YouTube Channels:</strong> Watch tutorials and build guides</li>
+                        <li><strong>Forums:</strong> Participate in discussions and ask questions</li>
+                    </ul>
+                    
+                    <h3>Conclusion: The Age of Dark Begins</h3>
+                    <p>Remember, Chosen Undead, that building a budget gaming PC is not merely a technical task, but a journey of resourcefulness and creative problem-solving. Like the Chosen Undead who must learn to survive in the age of dark, you will face challenges and limitations, but with determination and the guidance of the community, you will emerge victorious and achieve greatness even with limited resources.</p>
+                    
+                    <p>May the fading flame guide your path, and may your system serve you well in the eternal quest for gaming excellence. Embrace the dark, and may your frame rates be high and your temperatures low. The age of dark begins now, Chosen Undead. Prepare yourself for the trials ahead, for even in the darkest times, greatness can still be achieved!</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

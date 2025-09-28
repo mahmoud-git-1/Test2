@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget PC Build Guide: Maximum Value - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        * { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+        body { background: #000000 !important; background-image: radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%), radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%), linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%); font-family: 'Press Start 2P', monospace !important; color: #00ff00 !important; text-shadow: 2px 2px 0px #008800; line-height: 1.6; }
+        .navbar { background: #000000 !important; border-bottom: 4px solid #00ff00 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .nav-container { background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; }
+        .nav-logo, .nav-logo i { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .nav-link { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; border: 2px solid transparent !important; padding: 8px 16px !important; transition: all 0.1s ease !important; }
+        .nav-link:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #cc0000 !important; box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important; }
+        .nav-link.active { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border: 2px solid #008800 !important; box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important; }
+        .blog-post-section { background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important; border: 4px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 0 0 2px #008800, 0 8px 0 #008800, 0 16px 0 #006600 !important; position: relative; }
+        .blog-post-content { background: #000000 !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .blog-post-title { color: #00ff00 !important; text-shadow: 3px 3px 0px #008800, 6px 6px 0px #006600, 9px 9px 0px #004400 !important; }
+        .blog-post-meta, .blog-post-body { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body p { text-align: justify !important; text-justify: inter-word !important; }
+        .blog-post-body h2, .blog-post-body h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .blog-post-body ul li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .blog-post-body strong { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .btn { font-family: 'Press Start 2P', monospace !important; border: 3px solid #00ff00 !important; border-radius: 0 !important; background: #000000 !important; color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; padding: 12px 24px !important; transition: all 0.1s ease !important; position: relative; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn:hover { background: #ff0000 !important; color: #000000 !important; text-shadow: none !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .btn:active { transform: translateY(4px) !important; box-shadow: 0 0 0 #cc0000, 0 0 0 #aa0000 !important; }
+        .btn-secondary { background: #00ff00 !important; color: #000000 !important; text-shadow: none !important; border-color: #008800 !important; box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important; }
+        .btn-secondary:hover { background: #ff0000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 2px 0 #cc0000, 0 4px 0 #aa0000 !important; }
+        .footer { background: #000000 !important; border-top: 4px solid #00ff00 !important; box-shadow: 0 -4px 0 #008800, 0 -8px 0 #006600 !important; }
+        .footer h3 { color: #00ff00 !important; text-shadow: 2px 2px 0px #008800 !important; }
+        .footer p, .footer li { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; }
+        .footer a { color: #00ff00 !important; text-shadow: 1px 1px 0px #008800 !important; transition: all 0.1s ease !important; }
+        .footer a:hover { color: #ff0000 !important; text-shadow: 1px 1px 0px #cc0000 !important; }
+        .social-links a { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; transition: all 0.1s ease !important; box-shadow: 0 2px 0 #008800 !important; }
+        .social-links a:hover { background: #ff0000 !important; color: #000000 !important; border-color: #cc0000 !important; transform: translateY(2px) !important; box-shadow: 0 0 0 #cc0000 !important; }
+        input, textarea, select { background: #000000 !important; border: 2px solid #00ff00 !important; border-radius: 0 !important; color: #00ff00 !important; font-family: 'Press Start 2P', monospace !important; padding: 8px 12px !important; }
+        input:focus, textarea:focus, select:focus { outline: none !important; border-color: #ff0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: #000000; border: 2px solid #00ff00; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; border: 2px solid #008800; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; border-color: #cc0000; }
+        @media (max-width: 768px) { .btn { padding: 8px 16px !important; font-size: 0.8rem !important; } .nav-link { padding: 6px 12px !important; font-size: 0.7rem !important; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">💰 Budget PC Build Guide: Maximum Value</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">💰</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <p>Building a budget PC doesn't mean compromising on quality or performance. With careful component selection and smart shopping strategies, you can build a capable system that delivers excellent value for money. This guide shows you how to maximize performance while minimizing costs, whether you're building your first PC or looking for an affordable upgrade.</p>
+
+                    <h2>💡 Budget Building Strategies</h2>
+                    <p><strong>Smart Shopping Tips:</strong></p>
+                    <ul>
+                        <li><strong>Sales and Promotions:</strong> Black Friday, Cyber Monday, seasonal sales</li>
+                        <li><strong>Bundle Deals:</strong> CPU + motherboard combos, GPU + PSU bundles</li>
+                        <li><strong>Open Box Items:</strong> Significant savings on returned products</li>
+                        <li><strong>Previous Generation:</strong> Last-gen components often offer better value</li>
+                        <li><strong>Used Components:</strong> Carefully selected used parts can save money</li>
+                    </ul>
+
+                    <h2>💰 Budget Tiers and Builds</h2>
+                    <p><strong>Ultra Budget ($400-600):</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 5 5600G (integrated graphics)</li>
+                        <li><strong>Motherboard:</strong> B450 or B550 chipset</li>
+                        <li><strong>RAM:</strong> 16GB DDR4-3200</li>
+                        <li><strong>Storage:</strong> 500GB SATA SSD</li>
+                        <li><strong>Case:</strong> Basic ATX case with included fans</li>
+                        <li><strong>PSU:</strong> 450W 80+ Bronze</li>
+                        <li><strong>Performance:</strong> 1080p gaming at 30-60 FPS on low-medium settings</li>
+                    </ul>
+
+                    <p><strong>Budget Gaming ($600-800):</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 5 5600 or Intel Core i3-12100F</li>
+                        <li><strong>GPU:</strong> NVIDIA GTX 1660 Super or AMD RX 6600</li>
+                        <li><strong>Motherboard:</strong> B550 or B660 chipset</li>
+                        <li><strong>RAM:</strong> 16GB DDR4-3200</li>
+                        <li><strong>Storage:</strong> 500GB NVMe SSD</li>
+                        <li><strong>Performance:</strong> 1080p gaming at 60+ FPS on medium-high settings</li>
+                    </ul>
+
+                    <h2>🎯 Component Selection for Budget Builds</h2>
+                    <p><strong>CPU Selection:</strong></p>
+                    <ul>
+                        <li><strong>AMD Ryzen 5 5600G:</strong> Integrated graphics for ultra-budget builds</li>
+                        <li><strong>AMD Ryzen 5 5600:</strong> Excellent value for dedicated GPU builds</li>
+                        <li><strong>Intel Core i3-12100F:</strong> Strong single-core performance</li>
+                        <li><strong>Previous Gen:</strong> Ryzen 5 3600 or Core i5-10400F for better value</li>
+                    </ul>
+
+                    <p><strong>Graphics Card Selection:</strong></p>
+                    <ul>
+                        <li><strong>NVIDIA GTX 1660 Super:</strong> Great 1080p performance</li>
+                        <li><strong>AMD RX 6600:</strong> Excellent price-to-performance ratio</li>
+                        <li><strong>Used Options:</strong> GTX 1070, RTX 2060, RX 5700 XT</li>
+                        <li><strong>Previous Gen:</strong> RTX 3060 or RX 6600 XT when on sale</li>
+                    </ul>
+
+                    <h2>💾 Budget Storage Solutions</h2>
+                    <p><strong>Storage Strategy:</strong></p>
+                    <ul>
+                        <li><strong>Primary SSD:</strong> 500GB NVMe for OS and essential programs</li>
+                        <li><strong>Secondary Storage:</strong> 1TB HDD for games and media</li>
+                        <li><strong>Hybrid Approach:</strong> SSD for speed, HDD for capacity</li>
+                        <li><strong>Future Expansion:</strong> Easy to add more storage later</li>
+                    </ul>
+
+                    <h2>🔧 Budget-Friendly Components</h2>
+                    <p><strong>Motherboard Selection:</strong></p>
+                    <ul>
+                        <li><strong>B450/B550 (AMD):</strong> Good value, solid features</li>
+                        <li><strong>B660 (Intel):</strong> Affordable, supports latest CPUs</li>
+                        <li><strong>Essential Features:</strong> USB 3.0, M.2 slots, adequate VRMs</li>
+                        <li><strong>Avoid:</strong> Overpriced "gaming" motherboards with unnecessary features</li>
+                    </ul>
+
+                    <p><strong>Power Supply Selection:</strong></p>
+                    <ul>
+                        <li><strong>80+ Bronze:</strong> Good efficiency, reasonable price</li>
+                        <li><strong>Wattage:</strong> 450W-650W for most budget builds</li>
+                        <li><strong>Brands:</strong> EVGA, Corsair, Seasonic, Cooler Master</li>
+                        <li><strong>Safety:</strong> Never skimp on PSU quality</li>
+                    </ul>
+
+                    <h2>📦 Case Selection for Budget Builds</h2>
+                    <p><strong>Budget Case Features:</strong></p>
+                    <ul>
+                        <li><strong>Included Fans:</strong> Pre-installed fans save money</li>
+                        <li><strong>Good Airflow:</strong> Mesh front panels for cooling</li>
+                        <li><strong>Cable Management:</strong> Basic routing holes and tie-downs</li>
+                        <li><strong>Tool-less Design:</strong> Easy installation and upgrades</li>
+                    </ul>
+
+                    <h2>🔄 Upgrade Path Planning</h2>
+                    <p><strong>Future-Proofing Strategies:</strong></p>
+                    <ul>
+                        <li><strong>Socket Compatibility:</strong> Choose platforms with upgrade paths</li>
+                        <li><strong>RAM Slots:</strong> Extra slots for memory upgrades</li>
+                        <li><strong>PCIe Slots:</strong> Room for additional components</li>
+                        <li><strong>PSU Headroom:</strong> Extra wattage for future upgrades</li>
+                    </ul>
+
+                    <h2>🛒 Where to Buy Budget Components</h2>
+                    <p><strong>Best Places to Shop:</strong></p>
+                    <ul>
+                        <li><strong>Newegg:</strong> Frequent sales and combo deals</li>
+                        <li><strong>Amazon:</strong> Competitive pricing and fast shipping</li>
+                        <li><strong>Micro Center:</strong> In-store deals and bundle discounts</li>
+                        <li><strong>B&H Photo:</strong> No tax in many states</li>
+                        <li><strong>eBay:</strong> Used components and open box deals</li>
+                    </ul>
+
+                    <h2>⚠️ Budget Build Pitfalls to Avoid</h2>
+                    <ul>
+                        <li><strong>Cheap PSUs:</strong> Can damage components and void warranties</li>
+                        <li><strong>Incompatible Components:</strong> Always check compatibility</li>
+                        <li><strong>Overspending on Aesthetics:</strong> RGB and fancy cases add cost</li>
+                        <li><strong>Future-Proofing Too Much:</strong> Don't overspend on features you won't use</li>
+                        <li><strong>Ignoring Sales:</strong> Patience can save significant money</li>
+                    </ul>
+
+                    <h2>📊 Performance Expectations</h2>
+                    <p><strong>Realistic Performance Targets:</strong></p>
+                    <ul>
+                        <li><strong>1080p Gaming:</strong> 60+ FPS on medium-high settings</li>
+                        <li><strong>Productivity:</strong> Smooth multitasking and office work</li>
+                        <li><strong>Content Creation:</strong> Basic video editing and photo editing</li>
+                        <li><strong>Streaming:</strong> Hardware encoding for basic streaming</li>
+                    </ul>
+
+                    <p>Building a budget PC is all about making smart choices and prioritizing performance where it matters most. With careful planning and patience, you can build a system that punches well above its weight class and provides excellent value for years to come.</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

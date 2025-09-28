@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Orks: Budget Gaming and Creative Solutions - Hardware Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Pixel Art Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        /* Pixel Art Base Styles */
+        * {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        body {
+            background: #000000 !important;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #001100 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #002200 0%, transparent 50%),
+                linear-gradient(45deg, #000000 0%, #001100 50%, #002200 100%);
+            font-family: 'Press Start 2P', monospace !important;
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800;
+            line-height: 1.6;
+        }
+
+        /* Pixel Art Navigation */
+        .navbar {
+            background: #000000 !important;
+            border-bottom: 4px solid #00ff00 !important;
+            box-shadow: 0 4px 0 #008800, 0 8px 0 #006600 !important;
+        }
+
+        .nav-container {
+            background: linear-gradient(90deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+        }
+
+        .nav-logo {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-logo i {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .nav-link {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            border: 2px solid transparent !important;
+            padding: 8px 16px !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .nav-link:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #cc0000 !important;
+            box-shadow: inset 2px 2px 0px #ff0000, inset -2px -2px 0px #cc0000 !important;
+        }
+
+        .nav-link.active {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border: 2px solid #008800 !important;
+            box-shadow: inset 2px 2px 0px #00ff00, inset -2px -2px 0px #008800 !important;
+        }
+
+        /* Pixel Art Blog Post Section */
+        .blog-post-section {
+            background: linear-gradient(135deg, #000000 0%, #001100 50%, #000000 100%) !important;
+            border: 4px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 0 0 2px #008800,
+                0 8px 0 #008800,
+                0 16px 0 #006600 !important;
+            position: relative;
+        }
+
+        .blog-post-content {
+            background: #000000 !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .blog-post-title {
+            color: #00ff00 !important;
+            text-shadow: 
+                3px 3px 0px #008800,
+                6px 6px 0px #006600,
+                9px 9px 0px #004400 !important;
+        }
+
+        .blog-post-meta {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body p {
+            text-align: justify !important;
+            text-justify: inter-word !important;
+        }
+
+        .blog-post-body h2, .blog-post-body h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .blog-post-body ul li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .blog-post-body strong {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Buttons */
+        .btn {
+            font-family: 'Press Start 2P', monospace !important;
+            border: 3px solid #00ff00 !important;
+            border-radius: 0 !important;
+            background: #000000 !important;
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            padding: 12px 24px !important;
+            transition: all 0.1s ease !important;
+            position: relative;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        .btn:active {
+            transform: translateY(4px) !important;
+            box-shadow: 
+                0 0 0 #cc0000,
+                0 0 0 #aa0000 !important;
+        }
+
+        .btn-secondary {
+            background: #00ff00 !important;
+            color: #000000 !important;
+            text-shadow: none !important;
+            border-color: #008800 !important;
+            box-shadow: 
+                0 4px 0 #008800,
+                0 8px 0 #006600 !important;
+        }
+
+        .btn-secondary:hover {
+            background: #ff0000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 
+                0 2px 0 #cc0000,
+                0 4px 0 #aa0000 !important;
+        }
+
+        /* Pixel Art Footer */
+        .footer {
+            background: #000000 !important;
+            border-top: 4px solid #00ff00 !important;
+            box-shadow: 
+                0 -4px 0 #008800,
+                0 -8px 0 #006600 !important;
+        }
+
+        .footer h3 {
+            color: #00ff00 !important;
+            text-shadow: 2px 2px 0px #008800 !important;
+        }
+
+        .footer p, .footer li {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+        }
+
+        .footer a {
+            color: #00ff00 !important;
+            text-shadow: 1px 1px 0px #008800 !important;
+            transition: all 0.1s ease !important;
+        }
+
+        .footer a:hover {
+            color: #ff0000 !important;
+            text-shadow: 1px 1px 0px #cc0000 !important;
+        }
+
+        /* Pixel Art Social Links */
+        .social-links a {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            transition: all 0.1s ease !important;
+            box-shadow: 0 2px 0 #008800 !important;
+        }
+
+        .social-links a:hover {
+            background: #ff0000 !important;
+            color: #000000 !important;
+            border-color: #cc0000 !important;
+            transform: translateY(2px) !important;
+            box-shadow: 0 0 0 #cc0000 !important;
+        }
+
+        /* Pixel Art Form Elements */
+        input, textarea, select {
+            background: #000000 !important;
+            border: 2px solid #00ff00 !important;
+            border-radius: 0 !important;
+            color: #00ff00 !important;
+            font-family: 'Press Start 2P', monospace !important;
+            padding: 8px 12px !important;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            border-color: #ff0000 !important;
+            box-shadow: 0 0 0 2px #cc0000 !important;
+        }
+
+        /* Pixel Art Scrollbar */
+        ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+            border: 2px solid #00ff00;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border: 2px solid #008800;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0000;
+            border-color: #cc0000;
+        }
+
+        /* Responsive Pixel Art */
+        @media (max-width: 768px) {
+            .btn {
+                padding: 8px 16px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .nav-link {
+                padding: 6px 12px !important;
+                font-size: 0.7rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span class="logo-text">Hardware Heaven</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-post-content">
+                <div class="blog-post-header">
+                    <h1 class="blog-post-title">The Orks: Budget Gaming and Creative Solutions</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-date">December 19, 2024</span>
+                        <span class="blog-author">Hardware Heaven Team</span>
+                    </div>
+                </div>
+                
+                <div class="blog-post-image">
+                    <div class="blog-post-emoji">🔧</div>
+                </div>
+                
+                <div class="blog-post-body">
+                    <h2>WAAAGH! Building a Budget Gaming Rig the Ork Way</h2>
+                    <p>In the grim darkness of the far future, where there is only war, the Orks have mastered the art of making things work through sheer determination, creativity, and a healthy dose of "it'll work if we believe it will." While the Imperium spends vast resources on perfect technology, the Orks prove that sometimes the best solution is the one that works, regardless of how it looks or how it was made. This guide will teach you the Ork way of building a gaming rig: maximum performance for minimum teef (money), with plenty of creative solutions and "good enough" engineering.</p>
+                    
+                    <h3>The Ork Philosophy: "It Works Because We Say It Does"</h3>
+                    <p><strong>The Green Path to Gaming:</strong></p>
+                    <p>Orks don't care about fancy specifications or perfect aesthetics. They care about one thing: does it work? If it runs games and doesn't explode, it's good enough. This philosophy leads to some of the most creative and cost-effective gaming solutions in the galaxy.</p>
+                    
+                    <ul>
+                        <li><strong>Function Over Form:</strong> Performance matters more than appearance</li>
+                        <li><strong>Creative Problem Solving:</strong> Find unconventional solutions to common problems</li>
+                        <li><strong>Resourcefulness:</strong> Use what you have and make it work</li>
+                        <li><strong>Community Knowledge:</strong> Learn from other Orks and share solutions</li>
+                    </ul>
+                    
+                    <h3>The Warboss Rig: Maximum Performance for Minimum Teef</h3>
+                    <p><strong>Specifications for the Biggest and Baddest:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 5 5600 or Intel Core i5-12400F (The Boss's Choice)</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4060 or AMD RX 7600 (The Big Shoota)</li>
+                        <li><strong>RAM:</strong> 16GB DDR4-3200 (The Boyz' Memory)</li>
+                        <li><strong>Storage:</strong> 1TB NVMe SSD (The Loot Vault)</li>
+                        <li><strong>Motherboard:</strong> ASUS TUF Gaming B550M or MSI B660M Pro</li>
+                        <li><strong>PSU:</strong> 650W 80+ Bronze (The Power Generator)</li>
+                        <li><strong>Case:</strong> Fractal Design Core 1000 or Cooler Master MasterBox Q300L</li>
+                    </ul>
+                    
+                    <h3>The Nob's Rig: Reliable Performance for the Leaders</h3>
+                    <p><strong>Specifications for the Squad Leaders:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 5 7600 or Intel Core i5-13400F</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 4060 Ti or AMD RX 7700 XT</li>
+                        <li><strong>RAM:</strong> 32GB DDR5-5200</li>
+                        <li><strong>Storage:</strong> 1TB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS Prime B650M-A or MSI B760M Pro</li>
+                        <li><strong>PSU:</strong> 750W 80+ Gold</li>
+                        <li><strong>Case:</strong> Fractal Design Meshify C or NZXT H7 Flow</li>
+                    </ul>
+                    
+                    <h3>The Boy's Rig: Basic Performance for the Grunts</h3>
+                    <p><strong>Specifications for the Line Orks:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 5 5500 or Intel Core i3-12100F</li>
+                        <li><strong>GPU:</strong> NVIDIA RTX 3060 or AMD RX 6600</li>
+                        <li><strong>RAM:</strong> 16GB DDR4-3200</li>
+                        <li><strong>Storage:</strong> 500GB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS Prime B450M-A or MSI B560M Pro</li>
+                        <li><strong>PSU:</strong> 600W 80+ Bronze</li>
+                        <li><strong>Case:</strong> Fractal Design Core 1000 or Cooler Master MasterBox Q300L</li>
+                    </ul>
+                    
+                    <h3>The Gretchin's Rig: Ultra-Budget for the Little Ones</h3>
+                    <p><strong>Specifications for the Smallest Orks:</strong></p>
+                    <ul>
+                        <li><strong>CPU:</strong> AMD Ryzen 3 4100 or Intel Core i3-10100F</li>
+                        <li><strong>GPU:</strong> NVIDIA GTX 1660 Super or AMD RX 6500 XT</li>
+                        <li><strong>RAM:</strong> 8GB DDR4-3200</li>
+                        <li><strong>Storage:</strong> 250GB NVMe SSD</li>
+                        <li><strong>Motherboard:</strong> ASUS Prime A320M-K or MSI H510M Pro</li>
+                        <li><strong>PSU:</strong> 500W 80+ Bronze</li>
+                        <li><strong>Case:</strong> Fractal Design Core 1000 or Cooler Master MasterBox Q300L</li>
+                    </ul>
+                    
+                    <h3>The Ork Way: Creative Problem Solving</h3>
+                    <p><strong>Making Do With What You Have:</strong></p>
+                    <p>Orks are masters of improvisation and creative problem solving. When you don't have the latest and greatest hardware, you find ways to make what you have work better.</p>
+                    
+                    <ul>
+                        <li><strong>Case Modding:</strong> Cut holes in your case for better airflow</li>
+                        <li><strong>Cooling Solutions:</strong> Use household fans as case fans</li>
+                        <li><strong>Cable Management:</strong> Use zip ties and duct tape for organization</li>
+                        <li><strong>Storage Solutions:</strong> Use external drives for additional storage</li>
+                    </ul>
+                    
+                    <h3>The Sacred Components: Blessed by the Mekboyz</h3>
+                    <p><strong>The Cogitator Core (CPU):</strong></p>
+                    <p>Like the brain of a Warboss, your CPU needs to be able to think fast and make quick decisions. The AMD Ryzen 5 5600 and Intel Core i5-12400F offer excellent performance for gaming without breaking the bank. They're the perfect balance of power and affordability.</p>
+                    
+                    <p><strong>The Big Shoota (GPU):</strong></p>
+                    <p>The graphics card is your primary weapon in the digital war. The NVIDIA RTX 4060 and AMD RX 7600 deliver excellent 1080p gaming performance at reasonable prices. They may not be the biggest and baddest, but they'll get the job done.</p>
+                    
+                    <p><strong>The Boyz' Memory (RAM):</strong></p>
+                    <p>Memory is the collective knowledge of your warband, storing all the tactics and strategies needed for victory. 16GB of DDR4-3200 provides enough memory for modern gaming, while 32GB ensures you can handle multiple applications without running out of space.</p>
+                    
+                    <h3>The Ork Way: Budget-Friendly Solutions</h3>
+                    <p><strong>Buying Used Hardware (The Looted Gear):</strong></p>
+                    <ul>
+                        <li><strong>Graphics Cards:</strong> Look for used RTX 3060 or RX 6600 cards</li>
+                        <li><strong>CPUs:</strong> Consider previous generation processors</li>
+                        <li><strong>Motherboards:</strong> Buy last generation boards for better prices</li>
+                        <li><strong>Cases:</strong> Use old cases or find cheap alternatives</li>
+                    </ul>
+                    
+                    <p><strong>Creative Cooling Solutions:</strong></p>
+                    <ul>
+                        <li><strong>Case Fans:</strong> Use household fans as case fans</li>
+                        <li><strong>Thermal Paste:</strong> Use high-quality thermal paste for better cooling</li>
+                        <li><strong>Airflow:</strong> Ensure good airflow through your case</li>
+                        <li><strong>Temperature Monitoring:</strong> Keep an eye on system temperatures</li>
+                    </ul>
+                    
+                    <h3>The Ork Way: Assembly and Maintenance</h3>
+                    <p><strong>Assembly Philosophy (The WAAAGH Method):</strong></p>
+                    <ul>
+                        <li><strong>It Doesn't Have to Be Perfect:</strong> As long as it works, it's good enough</li>
+                        <li><strong>Use What You Have:</strong> Don't buy new tools if you can make do</li>
+                        <li><strong>Ask for Help:</strong> The Ork community is always willing to help</li>
+                        <li><strong>Learn as You Go:</strong> Don't be afraid to make mistakes</li>
+                    </ul>
+                    
+                    <p><strong>Maintenance (The Mekboy's Duty):</strong></p>
+                    <ul>
+                        <li><strong>Regular Cleaning:</strong> Keep your system free of dust and debris</li>
+                        <li><strong>Driver Updates:</strong> Keep your drivers updated for better performance</li>
+                        <li><strong>System Optimization:</strong> Use free tools to optimize your system</li>
+                        <li><strong>Backup Important Data:</strong> Don't lose your important files</li>
+                    </ul>
+                    
+                    <h3>The Ork Way: Gaming on a Budget</h3>
+                    <p><strong>Free and Cheap Games:</strong></p>
+                    <ul>
+                        <li><strong>Free-to-Play Games:</strong> Warframe, Path of Exile, Apex Legends</li>
+                        <li><strong>Indie Games:</strong> Support small developers with affordable games</li>
+                        <li><strong>Sales and Bundles:</strong> Wait for sales and buy games in bundles</li>
+                        <li><strong>Game Pass:</strong> Use subscription services for access to many games</li>
+                    </ul>
+                    
+                    <p><strong>Optimizing Game Settings:</strong></p>
+                    <ul>
+                        <li><strong>Lower Graphics Settings:</strong> Reduce quality for better performance</li>
+                        <li><strong>Resolution Scaling:</strong> Use lower resolutions for better frame rates</li>
+                        <li><strong>Disable Unnecessary Features:</strong> Turn off features you don't need</li>
+                        <li><strong>Use Performance Modes:</strong> Enable performance modes in games</li>
+                    </ul>
+                    
+                    <h3>The Ork Way: Community and Support</h3>
+                    <p><strong>The WAAAGH Community:</strong></p>
+                    <ul>
+                        <li><strong>Online Forums:</strong> Join communities for help and advice</li>
+                        <li><strong>YouTube Channels:</strong> Watch tutorials and reviews</li>
+                        <li><strong>Discord Servers:</strong> Join gaming and hardware communities</li>
+                        <li><strong>Local Groups:</strong> Find local gaming and hardware groups</li>
+                    </ul>
+                    
+                    <h3>Conclusion: The Green Path to Gaming</h3>
+                    <p>Remember, fellow Ork, that building a gaming rig is not about having the most expensive or the most powerful hardware. It's about making what you have work for you. The Ork way teaches us that creativity, resourcefulness, and determination can overcome any obstacle, even a limited budget.</p>
+                    
+                    <p>So grab your tools, gather your teef, and start building. With a little creativity and a lot of determination, you can create a gaming rig that will serve you well in the eternal war against lag and poor performance. WAAAGH!</p>
+                </div>
+                
+                <div class="blog-post-navigation">
+                    <a href="blogs.html" class="btn btn-secondary"> Back to Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hardware Heaven</h3>
+                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html#gpu">Graphics Cards</a></li>
+                        <li><a href="products.html#cpu">Processors</a></li>
+                        <li><a href="products.html#professional">Professional</a></li>
+                        <li><a href="products.html#popular">Most Popular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
