@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Hardware Heaven</title>
+    <title>اتصل بنا - جنة الأجهزة</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
@@ -40,6 +40,33 @@
         }
 
         /* ===== PIXEL ART STYLE OVERRIDE ===== */
+        /* RTL Support for Arabic */
+        body[dir="rtl"] {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        body[dir="rtl"] .nav-menu {
+            direction: rtl;
+        }
+        
+        body[dir="rtl"] .contact-content {
+            direction: rtl;
+        }
+        
+        body[dir="rtl"] .footer-content {
+            direction: rtl;
+        }
+        
+        body[dir="rtl"] .form-group {
+            text-align: right;
+        }
+        
+        body[dir="rtl"] input, 
+        body[dir="rtl"] textarea {
+            text-align: right;
+        }
+        
         /* Pixel Art Base Styles */
         * {
             image-rendering: pixelated;
@@ -511,7 +538,7 @@
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <img src="warhammer-stance.gif" alt="Loading..." class="loading-gif">
-        <div class="loading-text">LOADING<span class="loading-dots"></span></div>
+        <div class="loading-text">جاري التحميل<span class="loading-dots"></span></div>
     </div>
 
     <!-- Page Transition Overlay -->
@@ -522,14 +549,14 @@
         <div class="container">
             <div class="nav-logo">
                 <i class="fas fa-microchip"></i>
-                <span class="logo-text">Hardware Heaven</span>
+                <span class="logo-text">جنة الأجهزة</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link active">Contact</a></li>
-                <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+                <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li><a href="products.html" class="nav-link">المنتجات</a></li>
+                <li><a href="about.html" class="nav-link">حولنا</a></li>
+                <li><a href="contact.html" class="nav-link active">اتصل بنا</a></li>
+                <li><a href="blogs.html" class="nav-link">المدونة</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -547,13 +574,13 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
+            <h2 class="section-title">تواصل معنا</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
+                    <h3>معلومات الاتصال</h3>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>123 Tech Street, Digital City, DC 12345</span>
+                        <span>شارع التقنية 123، المدينة الرقمية، د.ت 12345</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
@@ -565,25 +592,25 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
-                        <span>Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</span>
+                        <span>الاثنين-الجمعة: 9ص-6م، السبت: 10ص-4م</span>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Send us a Message</h3>
+                    <h3>أرسل لنا رسالة</h3>
                     <form>
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" placeholder="اسمك" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" placeholder="بريدك الإلكتروني" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subject">
+                            <input type="text" placeholder="الموضوع">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea placeholder="رسالتك" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
                     </form>
                 </div>
             </div>
@@ -595,8 +622,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Hardware Heaven</h3>
-                    <p>Your trusted source for premium graphics cards, processors, and exceptional service.</p>
+                    <h3>جنة الأجهزة</h3>
+                    <p>مصدرك الموثوق لبطاقات الرسوميات المتميزة والمعالجات وخدمة استثنائية.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -605,34 +632,34 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>روابط سريعة</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="about.html">حولنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Categories</h3>
+                    <h3>الفئات</h3>
                     <ul>
-                        <li><a href="products.html#gpu">Graphics Cards</a></li>
-                        <li><a href="products.html#cpu">Processors</a></li>
-                        <li><a href="products.html#professional">Professional</a></li>
-                        <li><a href="products.html#popular">Most Popular</a></li>
+                        <li><a href="products.html#gpu">بطاقات الرسوميات</a></li>
+                        <li><a href="products.html#cpu">المعالجات</a></li>
+                        <li><a href="products.html#professional">المهنية</a></li>
+                        <li><a href="products.html#popular">الأكثر شعبية</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <h3>النشرة الإخبارية</h3>
+                    <p>اشترك للحصول على تحديثات حول المنتجات الجديدة والعروض الخاصة.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email">
-                        <button type="submit">Subscribe</button>
+                        <input type="email" placeholder="أدخل بريدك الإلكتروني">
+                        <button type="submit">اشترك</button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Hardware Heaven. All rights reserved.</p>
+                <p>&copy; 2024 جنة الأجهزة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
